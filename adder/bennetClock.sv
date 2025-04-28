@@ -1,11 +1,11 @@
 module bennett_clock #(
-    parameter WIDTH = 11      // Width of bennett clock signals
+    parameter WIDTH = 11     
 )(
-    input wire clk,       // External clock input
+    input wire clk,      
     input wire reset,         // Reset signal
     output reg instFlag,    // Signal to call instruction at end of ramp down
     output reg [WIDTH-1:0] clkn,    // Bennett clock output
-    output reg [WIDTH-1:0] clkp    // Bennett clock complement output
+    output reg [WIDTH-1:0] clkp     // Bennett clock output
 );
 
     // States for the state machine
@@ -15,10 +15,13 @@ module bennett_clock #(
     localparam ALL_X = 2'b11;     // State for all X's
     
     reg [1:0] state;
-    reg [3:0] counter;        // Counter to track position in sequence
-    integer i;                // Loop variable
+    // 2 counters 
+
+    // Idea:
+    // Changes bit up until a position, after the position, the bit stays the same
+    reg [3:0] counter;  // Counter to track position 
+    integer i;     
     
-    // Initialize with all X's
     initial begin
         instFlag <= 0;
         clkn = {WIDTH{1'bX}};
@@ -52,7 +55,7 @@ module bennett_clock #(
                     counter <= counter + 1;
                     
                     if (counter < WIDTH) begin
-                        // Directly build the pattern with appropriate X's and 0/1s
+                        // Build the pattern with X's and 0/1s
                         for (i = 0; i < WIDTH; i = i + 1) begin
                             if (i <= counter) begin
                                 clkn[i] <= 1'b0;
@@ -73,9 +76,8 @@ module bennett_clock #(
                     counter <= counter + 1;
                     
                     if (counter < WIDTH) begin
-                        // Directly build the pattern with appropriate X's and 0/1s
                         for (i = 0; i < WIDTH; i = i + 1) begin
-                            if (i < WIDTH - counter) begin
+                            if (i < WIDTH - counter) begin  // in reverse of RAMP UP
                                 clkn[i] <= 1'b0;
                                 clkp[i] <= 1'b1;
                             end else begin
