@@ -20,12 +20,13 @@ class adder_driver extends uvm_driver #(adder_transaction);
         adder_transaction txn;
         forever begin
             seq_item_port.get_next_item(txn);
-            @(posedge vif.instFlag);  // we should invoke our inputs with every instFlag call.
+           
             vif.a <= txn.a;
             vif.b <= txn.b;
             vif.cin <= txn.cin;
-            
+            @(posedge vif.calculation_done);    // wait for calculation_done to write transaction
             drv2sb.write(txn);
+            
             seq_item_port.item_done();    
         end
 

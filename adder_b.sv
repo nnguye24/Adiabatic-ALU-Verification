@@ -1,21 +1,27 @@
 module adder_b (
-    input wire [15:0] a,      // Changed to 16-bit input
-    input wire [15:0] b,      // Changed to 16-bit input
+    input wire [15:0] a,      // 16-bit input
+    input wire [15:0] b,      // 16-bit input
     input wire cin,
     input wire clk,      
     input wire reset,          
-    output wire [15:0] out,   // Changed to 16-bit output
+    output wire [15:0] out,   // Changed to wire
     output wire cout,
-    output wire calculation_done  // Added to indicate when result is valid
+    output wire calculation_done,  // Signal for when result is valid
+    output wire [7:0] clkp_out,    // Outputs for monitoring clock signals
+    output wire [7:0] clkn_out
 );
     // Power supplies
-    supply1 vdd;              // Added supply definitions
+    supply1 vdd;             
     supply0 vss;
 
     // Bennett clock signals
     wire instFlag;
     wire [7:0] clkneg;
     wire [7:0] clkpos;
+
+    // Connect monitor outputs to internal clock signals
+    assign clkp_out = clkpos;
+    assign clkn_out = clkneg;
 
     // Bennett clock generator
     bennett_clock #(
@@ -28,7 +34,7 @@ module adder_b (
         .clkp(clkpos)
     );
 
-    // Adder instance
+    // Adder instance with individual port connections
     adder adder_inst ( 
         a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8],
         a[9], a[10], a[11], a[12], a[13], a[14], a[15], 
