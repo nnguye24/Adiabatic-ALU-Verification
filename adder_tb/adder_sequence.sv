@@ -1,12 +1,15 @@
 class adder_sequence extends uvm_sequence#(adder_transaction)
+    `uvm_object_utils(adder_sequence)
 
-
+    adder_transaction txn;
+    longint loop_count=40;
+	
 	function new(string name = "adder_sequence");
 		super.new(name);
 	endfunction: new
 
     virtual task body();
-        repeat(40)
+        repeat(loop_count)
         begin
             txn = adder_transaction::type_id::create("txn");
             start_item(txn);
@@ -14,22 +17,20 @@ class adder_sequence extends uvm_sequence#(adder_transaction)
             finish_item(txn);
         end  
     endtask:body
-    
-
 
 endclass: adder_sequence
 
 
-class add_zero_a extends adder_sequence;
+class adder_add_zero_a extends adder_sequence;
      
-  `uvm_object_utils(adder_add_zero_in1)      
+  `uvm_object_utils(adder_add_zero_a)      
   
   
-  adder_sequence_item txn;
+  adder_transaction txn;
   longint loop_count=30;
   
   
-  function new(string name="add_zero_a");
+  function new(string name="adder_add_zero_a");
       super.new(name);
   endfunction
   
@@ -38,7 +39,7 @@ class add_zero_a extends adder_sequence;
   task body();
     repeat(loop_count)
       begin
-        txn=adder_sequence_item::type_id::create("txn");
+        txn=adder_transaction::type_id::create("txn");
         start_item(txn);
         assert(txn.randomize()with{
             txn.a == 0;
@@ -49,16 +50,16 @@ class add_zero_a extends adder_sequence;
   endtask:body
 endclass
 
-class add_zero_b extends adder_sequence;
+class adder_add_zero_b extends adder_sequence;
      
-  `uvm_object_utils(adder_add_zero_in1)      
+  `uvm_object_utils(adder_add_zero_b)      
   
   
-  adder_sequence_item txn;
+  adder_transaction txn;
   longint loop_count=30;
   
   
-  function new(string name="add_zero_b");
+  function new(string name="adder_add_zero_b");
       super.new(name);
   endfunction
   
@@ -67,7 +68,7 @@ class add_zero_b extends adder_sequence;
   task body();
     repeat(loop_count)
       begin
-        txn=adder_sequence_item::type_id::create("txn");
+        txn=adder_transaction::type_id::create("txn");
         start_item(txn);
         assert(txn.randomize()with{
             txn.b == 0;
@@ -78,16 +79,16 @@ class add_zero_b extends adder_sequence;
   endtask:body
 endclass
 
-class cin_1 extends adder_sequence;
+class adder_cin_1 extends adder_sequence;
      
-  `uvm_object_utils(adder_add_zero_in1)      
+  `uvm_object_utils(adder_cin_1)      
   
   
-  adder_sequence_item txn;
+  adder_transaction txn;
   longint loop_count=30;
   
   
-  function new(string name="cin_1");
+  function new(string name="adder_cin_1");
       super.new(name);
   endfunction
   
@@ -96,7 +97,7 @@ class cin_1 extends adder_sequence;
   task body();
     repeat(loop_count)
       begin
-        txn=adder_sequence_item::type_id::create("txn");
+        txn=adder_transaction::type_id::create("txn");
         start_item(txn);
         assert(txn.randomize()with{
             txn.cin == 1;
@@ -107,16 +108,16 @@ class cin_1 extends adder_sequence;
   endtask:body
 endclass
 
-class boundary extends adder_sequence;
+class adder_boundary extends adder_sequence;
      
-  `uvm_object_utils(adder_add_zero_in1)      
+  `uvm_object_utils(adder_boundary)      
   
   
-  adder_sequence_item txn;
+  adder_transaction txn;
   longint loop_count=30;
   
   
-  function new(string name="boundary");
+  function new(string name="adder_boundary");
       super.new(name);
   endfunction
   
@@ -125,7 +126,7 @@ class boundary extends adder_sequence;
   task body();
     repeat(loop_count)
       begin
-        txn=adder_sequence_item::type_id::create("txn");
+        txn=adder_transaction::type_id::create("txn");
         start_item(txn);
         assert(txn.randomize()with{
             txn.a == 16'hFFFF;
@@ -137,16 +138,16 @@ class boundary extends adder_sequence;
   endtask:body
 endclass
 
-class all_bits extends adder_sequence;
+class adder_all_bits extends adder_sequence;
      
-  `uvm_object_utils(adder_add_zero_in1)      
+  `uvm_object_utils(adder_all_bits)      
   
   
-  adder_sequence_item txn;
+  adder_transaction txn;
   longint loop_count=1;
   
   
-  function new(string name="all_bits");
+  function new(string name="adder_all_bits");
       super.new(name);
   endfunction
   
@@ -155,7 +156,7 @@ class all_bits extends adder_sequence;
   task body();
     repeat(loop_count)
       begin
-        txn=adder_sequence_item::type_id::create("txn");
+        txn=adder_transaction::type_id::create("txn");
         start_item(txn);
         assert(txn.randomize()with{
             txn.a == 16'hFFFF;

@@ -7,19 +7,21 @@ class adder_test extends uvm_test;
     endfunction
     
 
-    adder_env env_
+    adder_env env;
     int file;
 
-
+    // Base sequence
     adder_sequence seq;
+    
+    // Sequences with specific constraints
     adder_add_zero_a seq1_1;
     adder_add_zero_a seq1_2;
-
     adder_add_zero_b seq2_1;
     adder_add_zero_b seq2_2;
-
-    add_F seq3_1;
-    add_F seq3_2;
+    adder_cin_1 seq3_1;
+    adder_cin_1 seq3_2;
+    adder_boundary seq4_1;
+    adder_all_bits seq5_1;
   
     reset rst;
 
@@ -28,14 +30,15 @@ class adder_test extends uvm_test;
       super.build_phase(phase);
       env = adder_env::type_id::create("env",this);
 
-      seq=adder_sequence::type_id::create("seq");
-      seq1_1=adder_add_zero_a::type_id::create("seq1_1");
-      seq1_2=adder_add_zero_a::type_id::create("seq1_2");
-      seq2_1=adder_add_zero_b::type_id::create("seq2_1");
-      seq2_2=adder_add_zero_b::type_id::create("seq2_2");
-      seq3_1=add_F::type_id::create("seq3_1");
-      seq3_2=add_F::type_id::create("seq3_2");
-      rst=reset::type_id::create("rst");
+      seq = adder_sequence::type_id::create("seq");
+      seq1_1 = adder_add_zero_a::type_id::create("seq1_1");
+      seq1_2 = adder_add_zero_a::type_id::create("seq1_2");
+      seq2_1 = adder_add_zero_b::type_id::create("seq2_1");
+      seq2_2 = adder_add_zero_b::type_id::create("seq2_2");
+      seq3_1 = adder_cin_1::type_id::create("seq3_1");
+      seq3_2 = adder_cin_1::type_id::create("seq3_2");
+      seq4_1 = adder_boundary::type_id::create("seq4_1");
+      seq5_1 = adder_all_bits::type_id::create("seq5_1");
     endfunction
     
 
@@ -62,12 +65,19 @@ class adder_test extends uvm_test;
     
     task run_phase(uvm_phase phase);
 	      phase.raise_objection(this);
-           // seq.start(env.agent.sequencer);
+            
+            // Start with reset sequence
             rst.start(env.agent.sequencer);
+            
+            // Run base random sequence
             seq.start(env.agent.sequencer);
-            seq3_1.start(env.agent.sequencer);
-            seq1_1.start(env.agent.sequencer);
-            seq2_1.start(env.agent.sequencer);
+            
+            // Run constrained sequences
+            seq1_1.start(env.agent.sequencer); // a=0
+            seq2_1.start(env.agent.sequencer); // b=0
+            seq3_1.start(env.agent.sequencer); // cin=1
+            seq4_1.start(env.agent.sequencer); // Boundary values
+            seq5_1.start(env.agent.sequencer); // All bits
             
             #10;
 	      phase.drop_objection(this);
