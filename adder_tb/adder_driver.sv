@@ -7,7 +7,7 @@ class adder_driver extends uvm_driver #(adder_transaction);
     endfunction
 
 
-    virtual interface intf vif;
+    virtual intf vif;
 
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
@@ -21,10 +21,10 @@ class adder_driver extends uvm_driver #(adder_transaction);
         forever begin
             seq_item_port.get_next_item(txn);
             @(posedge vif.instFlag);  // we should invoke our inputs with every instFlag call.
-            vif.in1 <= txn.in1;
-            vif.in2 <= txn.in2;
+            vif.a <= txn.a;
+            vif.b <= txn.b;
             vif.cin <= txn.cin;
-            vif.rst <= txn.rst;
+            
             drv2sb.write(txn);
             seq_item_port.item_done();    
         end

@@ -8,7 +8,7 @@ class adder_sequence extends uvm_sequence#(adder_transaction)
     virtual task body();
         repeat(40)
         begin
-            txn=adder_transaction::type_id::create("txn");
+            txn = adder_transaction::type_id::create("txn");
             start_item(txn);
             assert(txn.randomize());
             txn.rst=0;
@@ -17,4 +17,7 @@ class adder_sequence extends uvm_sequence#(adder_transaction)
     endtask:body
     
 
+    // Add child sequences
+
 endclass: adder_sequence
+

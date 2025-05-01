@@ -1,8 +1,10 @@
 class adder_transaction extends uvm_sequence_item;
 
-    rand bit[15:0] ina;
-	rand bit[15:0] inb;
+	// Possibly add clkn and clkp
+    rand bit[15:0] a;
+	rand bit[15:0] b;
 	rand bit cin;
+	bit cout;
 	bit[15:0] out;
 
 	function new(string name = "adder_transaction");
@@ -14,7 +16,6 @@ class adder_transaction extends uvm_sequence_item;
 		`uvm_field_int(inb, UVM_ALL_ON)
 		`uvm_field_int(out, UVM_ALL_ON)
 	`uvm_object_utils_end
-
 
 endclass: adder_transaction
 

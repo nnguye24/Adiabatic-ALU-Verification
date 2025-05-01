@@ -19,16 +19,18 @@ class adder_monitor extends uvm_monitor;
         ap_mon = new("ap_mon", this);
         txn=adder_transaction::type_id::create("txn",this);
     endfunction 
-    
+
     task run_phase(uvm_phase phase);
         forever
         begin
             @(negedge vif.clk);
-            
-            txn.in1 = vif.in1;
-            txn.in2 = vif.in2;
+            txn.a = vif.a;
+            txn.b = vif.b;
+            txn.cin = vif.cin;
+            txn.cout = vif.cout
             txn.out = vif.out;
-            txn.rst = vif.rst;
+
+            // Send to scoreboard
             ap_mon.write(txn);
         end
   endtask
