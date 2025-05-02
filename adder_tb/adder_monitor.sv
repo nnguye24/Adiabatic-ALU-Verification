@@ -5,7 +5,7 @@ class adder_monitor extends uvm_monitor;
     endfunction
 
     adder_transaction txn;
-    virtual interface intf vif;
+    virtual intf vif;
     uvm_analysis_port#(adder_transaction) ap_mon;   // analysis port monitor
 
 
@@ -27,13 +27,18 @@ class adder_monitor extends uvm_monitor;
             txn.a = vif.a;
             txn.b = vif.b;
             txn.cin = vif.cin;
-            txn.cout = vif.cout
+            txn.cout = vif.cout;  // Fixed syntax error (missing semicolon)
             txn.out = vif.out;
-
+            txn.propagate = vif.propagate;  // Sample propagate signals
+            txn.generate_ = vif.generate_;  // Sample generate signals
+            
+            // Calculate expected values for checking in scoreboard
+            txn.calculatePG();
+            
             // Send to scoreboard
             ap_mon.write(txn);
         end
-  endtask
+    endtask
 
 
 

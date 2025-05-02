@@ -167,3 +167,46 @@ class adder_all_bits extends adder_sequence;
       end
   endtask:body
 endclass
+class adder_propagate_test extends adder_sequence;
+    `uvm_object_utils(adder_propagate_test)
+    
+    function new(string name="adder_propagate_test");
+        super.new(name);
+    endfunction
+    
+    // Patterns designed to test propagate signals specifically
+    // These create interesting propagate patterns by setting specific values for a and b
+    task body();
+        txn = adder_transaction::type_id::create("txn");
+        start_item(txn);
+        
+        // Test alternating 1s and 0s pattern 
+        txn.a = 16'hAAAA;
+        txn.b = 16'h5555; 
+        txn.cin = 0;
+        // propagate = all 1's
+        finish_item(txn);
+        
+        start_item(txn);
+        // Test pattern for all propagate signals = 0
+        txn.a = 16'hAAAA; 
+        txn.b = 16'hAAAA; 
+        txn.cin = 0;
+        finish_item(txn);
+        
+        start_item(txn);
+        // propagate  = 0xF0F0
+        txn.a = 16'hFFFF; 
+        txn.b = 16'h0F0F; 
+        txn.cin = 0;
+        finish_item(txn);
+        
+        start_item(txn);
+        // Test boundary values with propagate
+        txn.a = 16'hFFFF; 
+        txn.b = 16'h0000; 
+        txn.cin = 0;
+        finish_item(txn);
+    endtask
+endclass
+

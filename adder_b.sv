@@ -8,7 +8,9 @@ module adder_b (
     output wire cout,
     output wire calculation_done,  // Signal for when result is valid
     output wire [7:0] clkp_out,    // Outputs for monitoring clock signals
-    output wire [7:0] clkn_out
+    output wire [7:0] clkn_out,
+    output wire [15:0] propagate,  // Expose propagate signals for verification
+    output wire [15:0] generate_   // Expose generate signals for verification (note trailing underscore to avoid keyword)
 );
     // Power supplies
     supply1 vdd;             
@@ -34,6 +36,9 @@ module adder_b (
         .clkp(clkpos)
     );
 
+    // Wire to capture internal propagate signals from adder
+    wire [15:0] internal_p1;
+    
     // Adder instance with individual port connections
     adder adder_inst ( 
         a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8],
@@ -47,6 +52,13 @@ module adder_b (
         out[5], out[6], out[7], out[8], out[9], out[10], out[11], 
         out[12], out[13], out[14], out[15], vdd, vss
     );
+    
+    // Assign propagate and generate outputs
+    // In this design, propagate signals are p = a XOR b
+    // Generate signals are g = a AND b
+    // We'll recreate them here since we can't directly access internal signals
+    assign propagate = a ^ b;  // Propagate = a XOR b
+    assign generate_ = a & b;  // Generate = a AND b
     
     // Signal to indicate when calculation is complete
     assign calculation_done = instFlag;

@@ -1,7 +1,6 @@
-
 `uvm_analysis_imp_decl( _drv )
 `uvm_analysis_imp_decl( _mon )
-
+// tr is txn
 
 class adder_scoreboard extends uvm_scoreboard;
     `uvm_component_utils(adder_scoreboard)
@@ -12,7 +11,7 @@ class adder_scoreboard extends uvm_scoreboard;
     uvm_tlm_fifo #(adder_transaction) expfifo;  // Expected Output FIFO
     uvm_tlm_fifo #(adder_transaction) outfifo;  // Actual Output FIFO
 
-    int vec, pass, error;   // Counter for number of vectors, passes, and errors. 
+    int vec, pass, error;   // Counter for number of vectors, passes, and errors
 
     reg [15:0]t_out;
     reg [15:0]t_a, t_b, t_cin;
@@ -30,10 +29,10 @@ class adder_scoreboard extends uvm_scoreboard;
 
     endfunction
 
-    // Handling transaction... Expected Values
+    // Expected Values
     function void write_drv(adder_transaction tr);
-        `uvm_info("write_drv STIM", tr.input2string(), UVM_MEDIUM)
-        if(tr.rst==1) 
+        `uvm_info("write_drv STIM", tr.convert2string(), UVM_MEDIUM)
+        if(tr.reset==1) 
             begin 
                 t_out = 0;
             end
@@ -43,13 +42,16 @@ class adder_scoreboard extends uvm_scoreboard;
             t_b = tr.b;
             t_cin = tr.cin;
             t_out = t_a + t_b + t_cin;
+            // Calculate expected propagate and generate values
+            tr.expected_propagate = t_a ^ t_b;
+            tr.expected_generate = t_a & t_b;
         end
         tr.out = t_out;
-    void'(expfifo.try_put(tr));
+        void'(expfifo.try_put(tr));
     endfunction
 
     // Write outputs of monitor
-    function void write_mon(adder_sequence_item tr);
+    function void write_mon(adder_transaction tr);
         `uvm_info("write_mon OUT ", tr.convert2string(), UVM_MEDIUM)
         void'(outfifo.try_put(tr));
     endfunction
@@ -63,16 +65,31 @@ class adder_scoreboard extends uvm_scoreboard;
             `uvm_info("scoreboard run task","WAITING for actual output", UVM_DEBUG)
             outfifo.get(out_tr);
             
-            if (out_tr.out == exp_tr.out) begin
+            // Check output, propagate, and generate signals
+            if ((out_tr.out == exp_tr.out) && 
+                (out_tr.propagate == exp_tr.expected_propagate) &&
+                (out_tr.generate_ == exp_tr.expected_generate))  begin
+                
                 PASS();
-                `uvm_info ("PASS ",out_tr.convert2string() , UVM_MEDIUM)
-            end
-        
+                `uvm_info ("PASS ", $sformatf("Output: %h, Propagate: %h, Generate: %h", 
+                                             out_tr.out, out_tr.propagate, out_tr.generate_), UVM_MEDIUM)
+                end
             else begin
                 ERROR();
-                `uvm_info ("ERROR [ACTUAL_OP]",out_tr.convert2string() , UVM_MEDIUM)
-                `uvm_info ("ERROR [EXPECTED_OP]",exp_tr.convert2string() , UVM_MEDIUM)
-                `uvm_warning("ERROR",exp_tr.convert2string())
+                if (out_tr.out != exp_tr.out) begin
+                    `uvm_error("OUTPUT_MISMATCH", $sformatf("Actual out: %h, Expected out: %h", 
+                                                          out_tr.out, exp_tr.out))
+                end
+                if (out_tr.propagate != exp_tr.expected_propagate) begin
+                    `uvm_error("PROPAGATE_MISMATCH", $sformatf("Actual propagate: %h, Expected propagate: %h", 
+                                                             out_tr.propagate, exp_tr.expected_propagate))
+                end
+                if (out_tr.generate_ != exp_tr.expected_generate) begin
+                    `uvm_error("GENERATE_MISMATCH", $sformatf("Actual generate: %h, Expected generate: %h", 
+                                                            out_tr.generate_, exp_tr.expected_generate))
+                end
+                `uvm_info("ERROR", $sformatf("Transaction with errors: a=%h, b=%h, cin=%b", 
+                                           out_tr.a, out_tr.b, out_tr.cin), UVM_LOW)
             end
         end
     endtask

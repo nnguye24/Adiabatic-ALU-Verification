@@ -22,6 +22,11 @@ class adder_test extends uvm_test;
     adder_cin_1 seq3_2;
     adder_boundary seq4_1;
     adder_all_bits seq5_1;
+    
+    // Add specific sequences for propagate, generate, and ripple carry verification
+    adder_propagate_test seq_prop;
+    adder_generate_test seq_gen;
+    adder_ripple_carry_test seq_ripple;
   
     reset rst;
 
@@ -39,6 +44,9 @@ class adder_test extends uvm_test;
       seq3_2 = adder_cin_1::type_id::create("seq3_2");
       seq4_1 = adder_boundary::type_id::create("seq4_1");
       seq5_1 = adder_all_bits::type_id::create("seq5_1");
+      seq_prop = adder_propagate_test::type_id::create("seq_prop");
+      seq_gen = adder_generate_test::type_id::create("seq_gen");
+      seq_ripple = adder_ripple_carry_test::type_id::create("seq_ripple");
     endfunction
     
 
@@ -78,6 +86,15 @@ class adder_test extends uvm_test;
             seq3_1.start(env.agent.sequencer); // cin=1
             seq4_1.start(env.agent.sequencer); // Boundary values
             seq5_1.start(env.agent.sequencer); // All bits
+            
+            // Run propagate pattern specific tests
+            seq_prop.start(env.agent.sequencer); // Special propagate patterns
+            
+            // Run generate pattern specific tests
+            seq_gen.start(env.agent.sequencer); // Special generate patterns
+            
+            // Run ripple carry specific tests 
+            seq_ripple.start(env.agent.sequencer); // Ripple carry patterns
             
             #10;
 	      phase.drop_objection(this);
