@@ -130,7 +130,7 @@ class adder_boundary extends adder_sequence;
         start_item(txn);
         assert(txn.randomize()with{
             txn.a == 16'hFFFF;
-            txn.a == 16'h0001;
+            txn.b == 16'h0001;
             txn.cin == 0;
             });
         finish_item(txn);
@@ -160,7 +160,7 @@ class adder_all_bits extends adder_sequence;
         start_item(txn);
         assert(txn.randomize()with{
             txn.a == 16'hFFFF;
-            txn.a == 16'h0000;
+            txn.b == 16'h0000;
             txn.cin == 0;
             });
         finish_item(txn);

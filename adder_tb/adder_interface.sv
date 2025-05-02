@@ -12,8 +12,8 @@ interface intf(input logic clk, reset);
     logic [7:0] clkn_out;
     
     // Verification signals
-    logic [15:0] propagate;   // Propagate signals
-    logic [15:0] generate_;   // Generate signals (note trailing underscore to avoid keyword)
+    logic [15:0] propagate;  
+    logic [15:0] generate_;   // trailing underscore to avoid keyword
     
     // Modport for TB
     modport TB (

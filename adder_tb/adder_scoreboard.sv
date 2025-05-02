@@ -32,20 +32,14 @@ class adder_scoreboard extends uvm_scoreboard;
     // Expected Values
     function void write_drv(adder_transaction tr);
         `uvm_info("write_drv STIM", tr.convert2string(), UVM_MEDIUM)
-        if(tr.reset==1) 
-            begin 
-                t_out = 0;
-            end
-        else 
-        begin
-            t_a = tr.a;
-            t_b = tr.b;
-            t_cin = tr.cin;
-            t_out = t_a + t_b + t_cin;
-            // Calculate expected propagate and generate values
-            tr.expected_propagate = t_a ^ t_b;
-            tr.expected_generate = t_a & t_b;
-        end
+        // Process transaction
+        t_a = tr.a;
+        t_b = tr.b;
+        t_cin = tr.cin;
+        t_out = t_a + t_b + t_cin;
+        // Calculate expected propagate and generate values
+        tr.expected_propagate = t_a ^ t_b;
+        tr.expected_generate = t_a & t_b;
         tr.out = t_out;
         void'(expfifo.try_put(tr));
     endfunction

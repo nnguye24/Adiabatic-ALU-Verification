@@ -9,7 +9,7 @@ class adder_monitor extends uvm_monitor;
     uvm_analysis_port#(adder_transaction) ap_mon;   // analysis port monitor
 
 
-    function void build_phase(uvm_phase phase)
+    function void build_phase(uvm_phase phase);
         super.build_phase(phase);
 
         if(!(uvm_config_db#(virtual intf)::get(this,"","vif",vif)))

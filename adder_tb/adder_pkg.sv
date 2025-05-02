@@ -1,3 +1,7 @@
+`ifndef TB_PKG
+`define TB_PKG
+
+`include "uvm_macros.svh"
 package adder_pkg;
 	import uvm_pkg::*;
 
@@ -11,7 +15,7 @@ package adder_pkg;
 	`include "adder_agent.sv"
 	`include "adder_scoreboard.sv"
 	`include "adder_coverage.sv"
-	`include "adder_config.sv"
 	`include "adder_env.sv"
+	`include "reset.sv"
 	`include "adder_test.sv"
 endpackage: adder_pkg

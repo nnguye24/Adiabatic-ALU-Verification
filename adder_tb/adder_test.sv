@@ -51,19 +51,19 @@ class adder_test extends uvm_test;
     
 
     
-    function void end_of_elobartion_phase(uvm_phase phase);
-      //super.end_of_elobartion_phase(phase);
+    function void end_of_elaboration_phase(uvm_phase phase);
+      super.end_of_elaboration_phase(phase);
       //factory.print();
-      $display("End of eleboration phase in agent");
+      $display("End of elaboration phase in agent");
     endfunction
     
 
     
     function void start_of_simulation_phase(uvm_phase phase);
-      //super.start_of_simulation_phase(phase);
+      super.start_of_simulation_phase(phase);
       $display("start_of_simulation_phase");
       file=$fopen("LOG_FILE.log","w");
-      set_report_default_fileier(file);
+      set_report_default_file(file);
       set_report_severity_action_hier(UVM_INFO,UVM_DISPLAY+UVM_LOG);
       env.set_report_verbosity_level_hier(UVM_MEDIUM);
       seq.loop_count=100;

@@ -36,7 +36,6 @@ module adder_b (
         .clkp(clkpos)
     );
 
-    // Wire to capture internal propagate signals from adder
     wire [15:0] internal_p1;
     
     // Adder instance with individual port connections
