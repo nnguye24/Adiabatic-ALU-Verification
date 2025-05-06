@@ -8,7 +8,9 @@ class adder_transaction extends uvm_sequence_item;
 	bit[15:0] propagate;    
 	bit[15:0] expected_propagate;  
 	bit[15:0] generate_;           // trailing underscore to avoid keyword
-	bit[15:0] expected_generate;   
+	bit[15:0] expected_generate;
+	bit[7:0] clkp_out;             // Added clock signals
+	bit[7:0] clkn_out;
 
 	function new(string name = "adder_transaction");
 		super.new(name);
@@ -25,6 +27,8 @@ class adder_transaction extends uvm_sequence_item;
 		`uvm_field_int(expected_propagate, UVM_ALL_ON)
 		`uvm_field_int(generate_, UVM_ALL_ON)
 		`uvm_field_int(expected_generate, UVM_ALL_ON)
+		`uvm_field_int(clkp_out, UVM_ALL_ON)
+		`uvm_field_int(clkn_out, UVM_ALL_ON)
 	`uvm_object_utils_end
 	
 	// Function to calculate expected propagate and generate values 

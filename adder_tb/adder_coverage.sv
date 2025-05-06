@@ -4,8 +4,9 @@ class adder_coverage extends uvm_subscriber #(adder_transaction);
 
   function new(string name="",uvm_component parent);
     super.new(name,parent);
-    dut_cov=new();
+    dut_cov = new();
   endfunction
+  
   
   adder_transaction txn;
   real cov;

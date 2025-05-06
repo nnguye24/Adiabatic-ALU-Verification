@@ -52,8 +52,6 @@ module bennett_clock #(
                 end
                 
                 RAMP_UP: begin
-                    counter <= counter + 1;
-                    
                     if (counter < WIDTH) begin
                         // Build the pattern with X's and 0/1s
                         for (i = 0; i < WIDTH; i = i + 1) begin
@@ -65,6 +63,8 @@ module bennett_clock #(
                                 clkp[i] <= 1'bX;
                             end
                         end
+                        // Increment counter after pattern is set
+                        counter <= counter + 1;
                     end else begin
                         // Fully activated, switch to ramp down
                         state <= RAMP_DOWN;
@@ -73,8 +73,6 @@ module bennett_clock #(
                 end
                 
                 RAMP_DOWN: begin
-                    counter <= counter + 1;
-                    
                     if (counter < WIDTH) begin
                         for (i = 0; i < WIDTH; i = i + 1) begin
                             if (i < WIDTH - counter) begin  // in reverse of RAMP UP
@@ -85,6 +83,8 @@ module bennett_clock #(
                                 clkp[i] <= 1'bX;
                             end
                         end
+                        // Increment counter after pattern is set
+                        counter <= counter + 1;
                     end else begin
                         // Move to ALL_X state
                         state <= ALL_X;

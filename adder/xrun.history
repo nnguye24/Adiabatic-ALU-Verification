@@ -1,0 +1,19 @@
+s1(27Apr2025:20:13:35):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s2(27Apr2025:20:14:11):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s3(27Apr2025:20:14:56):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s4(27Apr2025:20:16:51):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s5(27Apr2025:20:17:17):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s6(27Apr2025:20:18:35):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s7(27Apr2025:20:19:19):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s8(27Apr2025:20:19:52):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s9(27Apr2025:20:20:04):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s10(27Apr2025:20:20:23):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv and2b.sv adder_tb.sv 
+s11(27Apr2025:20:24:38):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv and2b.sv adder_tb.sv 
+s12(27Apr2025:20:46:10):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s13(27Apr2025:20:59:08):  xrun -access +r -gui adder.sv black_cell2b.sv black_cell_inv2b.sv custom_tranif.sv gray_cell_inv2b.sv gray_cell2b.sv inv_fo16.sv inv.sv xor2b.sv bennetClock.sv adder_tb.sv 
+s14(27Apr2025:21:50:25):  xrun -access +r -gui adder.sv adder_tb.sv 
+s15(27Apr2025:21:51:08):  xrun -access +r -gui adder.sv adder_tb.sv 
+s16(27Apr2025:21:52:05):  xrun -access +r -gui adder_tb.sv 
+s17(27Apr2025:21:52:19):  xrun -access +r -gui adder.sv adder_tb.sv 
+s18(03May2025:21:19:34):  xrun -access +r -gui adder.sv adder_tb.sv 
+s19(03May2025:21:26:13):  xrun -access +r -gui adder.sv adder_tb.sv 

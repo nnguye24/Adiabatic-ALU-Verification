@@ -1,0 +1,173 @@
+xrun(64): 19.03-s013: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	19.03-s013: Started on May 03, 2025 at 21:26:12 EDT
+xrun
+	-access +r
+	-gui
+	adder.sv
+	adder_tb.sv
+Recompiling... reason: file './adder.sv' is newer than expected.
+	expected: Sun Apr 27 21:50:54 2025
+	actual:   Sat May  3 21:25:11 2025
+file: adder.sv
+	module worklib.xor2b:sv
+		errors: 0, warnings: 0
+	module worklib.ctranif1:sv
+		errors: 0, warnings: 0
+	module worklib.ctranif0:sv
+		errors: 0, warnings: 0
+	module worklib.inv:sv
+		errors: 0, warnings: 0
+	module worklib.inv_fo16:sv
+		errors: 0, warnings: 0
+	module worklib.and2b:sv
+		errors: 0, warnings: 0
+	module worklib.gray_cell_inv2b:sv
+		errors: 0, warnings: 0
+	module worklib.gray_cell2b:sv
+		errors: 0, warnings: 0
+	module worklib.black_cell_inv2b:sv
+		errors: 0, warnings: 0
+	module worklib.black_cell2b:sv
+		errors: 0, warnings: 0
+	module worklib.adder:sv
+		errors: 0, warnings: 0
+file: adder_tb.sv
+	module worklib.bennett_clock:sv
+		errors: 0, warnings: 0
+	module worklib.adder_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		adder_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.bennett_clock:sv <0x655ee0b2>
+			streams:  12, words:  8946
+		worklib.adder_tb:sv <0x2a7bd562>
+			streams:  37, words: 25626
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:               1109      13
+		Primitives:             998       2
+		Registers:               11      11
+		Scalar wires:            47       -
+		Expanded wires:          16       2
+		Always blocks:            1       1
+		Initial blocks:           4       4
+		Pseudo assignments:      33      33
+		Simulation timescale:   1ns
+	Writing initial simulation snapshot: worklib.adder_tb:sv
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /escnfs/home/csesoft/cadence/installs/XCELIUM1903/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm adder_tb.a adder_tb.b adder_tb.cin adder_tb.clk adder_tb.clkneg adder_tb.clkpos adder_tb.cout adder_tb.instFlag adder_tb.out adder_tb.reset adder_tb.vdd adder_tb.vss
+Created probe 1
+xcelium> run
+Time=0, instFlag=0, clkneg=xxxxxxxx, clkpos=xxxxxxxx
+Time=25, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+Time=45, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=55, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=65, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=75, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=85, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=95, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=105, instFlag=0, clkneg=00000000, clkpos=11111111
+Time=135, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=145, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=155, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=165, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=175, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=185, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=195, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+
+Test case 0: a=0000, b=0000, cin=0
+Expected: 0000, Actual: xxxx, cout=x
+Time=215, instFlag=1, clkneg=xxxxxxxx, clkpos=xxxxxxxx
+Time=225, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+Time=245, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=255, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=265, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=275, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=285, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=295, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=305, instFlag=0, clkneg=00000000, clkpos=11111111
+Time=335, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=345, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=355, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=365, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=375, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=385, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=395, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+
+Test case 1: a=000f, b=0001, cin=0
+Expected: 0010, Actual: xxxx, cout=x
+Time=415, instFlag=1, clkneg=xxxxxxxx, clkpos=xxxxxxxx
+Time=425, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+Time=445, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=455, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=465, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=475, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=485, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=495, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=505, instFlag=0, clkneg=00000000, clkpos=11111111
+Time=535, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=545, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=555, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=565, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=575, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=585, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=595, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+
+Test case 2: a=0011, b=ff11, cin=1
+Expected: ff23, Actual: xxxx, cout=x
+Time=615, instFlag=1, clkneg=xxxxxxxx, clkpos=xxxxxxxx
+Time=625, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+Time=645, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=655, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=665, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=675, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=685, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=695, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=705, instFlag=0, clkneg=00000000, clkpos=11111111
+Time=735, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=745, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=755, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=765, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=775, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=785, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=795, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+
+Test case 3: a=ffff, b=ffff, cin=0
+Expected: fffe, Actual: xxxx, cout=x
+Time=815, instFlag=1, clkneg=xxxxxxxx, clkpos=xxxxxxxx
+Time=825, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+Time=845, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=855, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=865, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=875, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=885, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=895, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=905, instFlag=0, clkneg=00000000, clkpos=11111111
+Time=935, instFlag=0, clkneg=x0000000, clkpos=x1111111
+Time=945, instFlag=0, clkneg=xx000000, clkpos=xx111111
+Time=955, instFlag=0, clkneg=xxx00000, clkpos=xxx11111
+Time=965, instFlag=0, clkneg=xxxx0000, clkpos=xxxx1111
+Time=975, instFlag=0, clkneg=xxxxx000, clkpos=xxxxx111
+Time=985, instFlag=0, clkneg=xxxxxx00, clkpos=xxxxxx11
+Time=995, instFlag=0, clkneg=xxxxxxx0, clkpos=xxxxxxx1
+
+Test case 4: a=1234, b=5678, cin=1
+Expected: 68ad, Actual: xxxx, cout=x
+Time=1015, instFlag=1, clkneg=xxxxxxxx, clkpos=xxxxxxxx
+Simulation complete via $finish(1) at time 1025 NS + 0
+./adder_tb.sv:110         $finish;
+xcelium> 

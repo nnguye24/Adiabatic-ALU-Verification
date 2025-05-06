@@ -1,3 +1,14 @@
+`include "adder/custom_tranif.sv"
+`include "adder/inv.sv"
+`include "adder/inv_fo16.sv"
+`include "adder/and2b.sv"
+`include "adder/black_cell2b.sv"
+`include "adder/black_cell_inv2b.sv"
+`include "adder/gray_cell2b.sv"
+`include "adder/gray_cell_inv2b.sv"
+`include "adder/adder.sv"
+`include "adder/bennettClock.sv"
+
 module adder_b (
     input wire [15:0] a,      // 16-bit input
     input wire [15:0] b,      // 16-bit input

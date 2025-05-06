@@ -1,0 +1,230 @@
+xrun(64): 19.03-s013: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	19.03-s013: Started on May 03, 2025 at 19:11:41 EDT
+xrun
+	-access +r
+	-gui
+	adder_pkg.sv
+	adder/adder_b.sv
+	testbench.sv
+file: adder_pkg.sv
+`include "uvm_macros.svh"
+                        |
+xmvlog: *E,COFILX (adder_pkg.sv,4|24): cannot open include file 'uvm_macros.svh'.
+	import uvm_pkg::*;
+	             |
+xmvlog: *E,NOPBIND (adder_pkg.sv,6|14): Package uvm_pkg could not be bound.
+(`include file: adder_transaction.sv line 1, file: adder_pkg.sv line 8)
+class adder_transaction extends uvm_sequence_item;
+                                                |
+xmvlog: *E,SVNOTY (adder_transaction.sv,1|48): Syntactically this identifier appears to begin a datatype but it does not refer to a visible datatype in the current scope.
+(`include file: adder_transaction.sv line 1, file: adder_pkg.sv line 8)
+		super.new(name);
+		    |
+xmvlog: *E,CLSSPX (adder_transaction.sv,14|6): 'super' can only be used within a class scope that derives from a base class.
+(`include file: adder_transaction.sv line 14, file: adder_pkg.sv line 8)
+	`uvm_object_utils_begin(adder_transaction)
+	                      |
+xmvlog: *E,NOTDIR (adder_transaction.sv,18|23): `uvm_object_utils_begin: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 18, file: adder_pkg.sv line 8)
+	`uvm_object_utils_begin(adder_transaction)
+	                       |
+xmvlog: *E,EXPENC (adder_transaction.sv,18|24): Expecting the keyword 'endclass'.
+(`include file: adder_transaction.sv line 18, file: adder_pkg.sv line 8)
+		`uvm_field_int(a, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,19|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 19, file: adder_pkg.sv line 8)
+		`uvm_field_int(b, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,20|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 20, file: adder_pkg.sv line 8)
+		`uvm_field_int(cin, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,21|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 21, file: adder_pkg.sv line 8)
+		`uvm_field_int(out, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,22|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 22, file: adder_pkg.sv line 8)
+		`uvm_field_int(cout, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,23|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 23, file: adder_pkg.sv line 8)
+		`uvm_field_int(propagate, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,24|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 24, file: adder_pkg.sv line 8)
+		`uvm_field_int(expected_propagate, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,25|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 25, file: adder_pkg.sv line 8)
+		`uvm_field_int(generate_, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,26|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 26, file: adder_pkg.sv line 8)
+		`uvm_field_int(expected_generate, UVM_ALL_ON)
+		             |
+xmvlog: *E,NOTDIR (adder_transaction.sv,27|15): `uvm_field_int: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 27, file: adder_pkg.sv line 8)
+	`uvm_object_utils_end
+	                    |
+xmvlog: *E,NOTDIR (adder_transaction.sv,28|21): `uvm_object_utils_end: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_transaction.sv line 28, file: adder_pkg.sv line 8)
+endclass: adder_transaction
+       |
+xmvlog: *E,EXPENP (adder_transaction.sv,38|7): Expecting the keyword 'endpackage' [SystemVerilog].
+(`include file: adder_transaction.sv line 38, file: adder_pkg.sv line 8)
+    `uvm_object_utils(adder_sequence)
+                    |
+xmvlog: *E,NOTDIR (adder_sequence.sv,2|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_sequence.sv line 2, file: adder_pkg.sv line 9)
+  `uvm_object_utils(adder_add_zero_a)      
+                  |
+xmvlog: *E,NOTDIR (adder_sequence.sv,26|18): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_sequence.sv line 26, file: adder_pkg.sv line 9)
+  `uvm_object_utils(adder_add_zero_b)      
+                  |
+xmvlog: *E,NOTDIR (adder_sequence.sv,55|18): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_sequence.sv line 55, file: adder_pkg.sv line 9)
+  `uvm_object_utils(adder_cin_1)      
+                  |
+xmvlog: *E,NOTDIR (adder_sequence.sv,84|18): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_sequence.sv line 84, file: adder_pkg.sv line 9)
+  `uvm_object_utils(adder_boundary)      
+                  |
+xmvlog: *E,NOTDIR (adder_sequence.sv,113|18): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_sequence.sv line 113, file: adder_pkg.sv line 9)
+  `uvm_object_utils(adder_all_bits)      
+                  |
+xmvlog: *E,NOTDIR (adder_sequence.sv,143|18): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_sequence.sv line 143, file: adder_pkg.sv line 9)
+    `uvm_object_utils(adder_propagate_test)
+                    |
+xmvlog: *E,NOTDIR (adder_sequence.sv,171|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_sequence.sv line 171, file: adder_pkg.sv line 9)
+	`include "adder_ripple_carry_test.sv"
+	                                    |
+xmvlog: *E,COFILX (adder_pkg.sv,10|37): cannot open include file 'adder_ripple_carry_test.sv'.
+    `uvm_object_utils(adder_generate_test)
+                    |
+xmvlog: *E,NOTDIR (adder_generate_test.sv,2|20): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_generate_test.sv line 2, file: adder_pkg.sv line 11)
+	`include "adder_sequencer.sv"
+	                            |
+xmvlog: *E,COFILX (adder_pkg.sv,12|29): cannot open include file 'adder_sequencer.sv'.
+            `uvm_fatal("monitor","unable to get interface")
+                     |
+xmvlog: *E,NOTDIR (adder_monitor.sv,17|21): `uvm_fatal: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_monitor.sv line 17, file: adder_pkg.sv line 13)
+	`include "adder_driver.sv"
+	                         |
+xmvlog: *E,COFILX (adder_pkg.sv,14|26): cannot open include file 'adder_driver.sv'.
+	`include "adder_agent.sv"
+	                        |
+xmvlog: *E,COFILX (adder_pkg.sv,15|25): cannot open include file 'adder_agent.sv'.
+`uvm_analysis_imp_decl( _drv )
+                     |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,1|21): `uvm_analysis_imp_decl: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 1, file: adder_pkg.sv line 16)
+`uvm_analysis_imp_decl( _mon )
+                     |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,2|21): `uvm_analysis_imp_decl: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 2, file: adder_pkg.sv line 16)
+    `uvm_component_utils(adder_scoreboard)
+                       |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,6|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 6, file: adder_pkg.sv line 16)
+        `uvm_info("write_drv STIM", tr.convert2string(), UVM_MEDIUM)
+                |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,34|16): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 34, file: adder_pkg.sv line 16)
+        `uvm_info("write_mon OUT ", tr.convert2string(), UVM_MEDIUM)
+                |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,49|16): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 49, file: adder_pkg.sv line 16)
+            `uvm_info("scoreboard run task","WAITING for expected output", UVM_DEBUG)
+                    |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,57|20): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 57, file: adder_pkg.sv line 16)
+            `uvm_info("scoreboard run task","WAITING for actual output", UVM_DEBUG)
+                    |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,59|20): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 59, file: adder_pkg.sv line 16)
+                `uvm_info ("PASS ", $sformatf("Output: %h, Propagate: %h, Generate: %h", 
+                        |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,68|24): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 68, file: adder_pkg.sv line 16)
+                    `uvm_error("OUTPUT_MISMATCH", $sformatf("Actual out: %h, Expected out: %h", 
+                             |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,74|29): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 74, file: adder_pkg.sv line 16)
+                    `uvm_error("PROPAGATE_MISMATCH", $sformatf("Actual propagate: %h, Expected propagate: %h", 
+                             |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,78|29): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 78, file: adder_pkg.sv line 16)
+                    `uvm_error("GENERATE_MISMATCH", $sformatf("Actual generate: %h, Expected generate: %h", 
+                             |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,82|29): `uvm_error: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 82, file: adder_pkg.sv line 16)
+                `uvm_info("ERROR", $sformatf("Transaction with errors: a=%h, b=%h, cin=%b", 
+                        |
+xmvlog: *E,NOTDIR (adder_scoreboard.sv,85|24): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_scoreboard.sv line 85, file: adder_pkg.sv line 16)
+  `uvm_component_utils(adder_coverage)
+                     |
+xmvlog: *E,NOTDIR (adder_coverage.sv,3|21): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_coverage.sv line 3, file: adder_pkg.sv line 17)
+    `uvm_info(get_type_name(),$sformatf("Coverage is %f",cov),UVM_MEDIUM)
+            |
+xmvlog: *E,NOTDIR (adder_coverage.sv,118|12): `uvm_info: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_coverage.sv line 118, file: adder_pkg.sv line 17)
+    `uvm_component_utils(adder_env) // register
+                       |
+xmvlog: *E,NOTDIR (adder_env.sv,2|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_env.sv line 2, file: adder_pkg.sv line 18)
+  `uvm_object_utils(reset)
+                  |
+xmvlog: *E,NOTDIR (reset.sv,2|18): `uvm_object_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: reset.sv line 2, file: adder_pkg.sv line 19)
+    `uvm_component_utils(adder_test)
+                       |
+xmvlog: *E,NOTDIR (adder_test.sv,3|23): `uvm_component_utils: not a recognized directive or macro [2.7.3][16.3.1][16(IEEE)].
+(`include file: adder_test.sv line 3, file: adder_pkg.sv line 20)
+	package worklib.adder_pkg:sv
+		errors: 46, warnings: 0
+file: adder/adder_b.sv
+	module worklib.ctranif1:sv
+		errors: 0, warnings: 0
+	module worklib.ctranif0:sv
+		errors: 0, warnings: 0
+	module worklib.inv:sv
+		errors: 0, warnings: 0
+	module worklib.inv_fo16:sv
+		errors: 0, warnings: 0
+	module worklib.and2b:sv
+		errors: 0, warnings: 0
+	module worklib.black_cell2b:sv
+		errors: 0, warnings: 0
+	module worklib.black_cell_inv2b:sv
+		errors: 0, warnings: 0
+	module worklib.gray_cell2b:sv
+		errors: 0, warnings: 0
+	module worklib.gray_cell_inv2b:sv
+		errors: 0, warnings: 0
+	module worklib.adder:sv
+		errors: 0, warnings: 0
+`include "adder/bennettClock.sv"
+                               |
+xmvlog: *E,COFILX (adder/adder_b.sv,10|31): cannot open include file 'adder/bennettClock.sv'.
+	module worklib.adder_b:sv
+		errors: 0, warnings: 0
+file: testbench.sv
+	interface worklib.intf:sv
+		errors: 0, warnings: 0
+endmodule
+         |
+xmvlog: *E,EOFICD (testbench.sv,51|9): EOF found within `ifdef (@ ./adder_pkg.sv,1|7) compiler directive [16.4(IEEE)].
+	Total errors/warnings found outside modules and primitives:
+		errors: 2, warnings: 0
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun(64)	19.03-s013: Exiting on May 03, 2025 at 19:11:41 EDT  (total: 00:00:00)

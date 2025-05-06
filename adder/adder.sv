@@ -2,6 +2,15 @@
 // LAST TIME SAVED: Apr 26 11:19:51 2025
 // NETLIST TIME: Apr 27 19:08:19 2025
 `timescale 1ns / 1ns 
+`include "xor2b.sv"
+`include "custom_tranif.sv"
+`include "inv.sv"
+`include "inv_fo16.sv"
+`include "and2b.sv"
+`include "gray_cell_inv2b.sv"
+`include "gray_cell2b.sv"
+`include "black_cell_inv2b.sv"
+`include "black_cell2b.sv"
 
 module adder ( a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8],
      a[9], a[10], a[11], a[12], a[13], a[14], a[15], b[0], b[1], b[2],

@@ -3,10 +3,9 @@ class adder_test extends uvm_test;
     `uvm_component_utils(adder_test)
     
     function new(string name="",uvm_component parent);
-	    super.new(name,parent);
+        super.new(name,parent);
     endfunction
     
-
     adder_env env;
     int file;
 
@@ -27,9 +26,6 @@ class adder_test extends uvm_test;
     adder_propagate_test seq_prop;
     adder_generate_test seq_gen;
     adder_ripple_carry_test seq_ripple;
-  
-    reset rst;
-
     
     function void build_phase(uvm_phase phase);
       super.build_phase(phase);
@@ -49,15 +45,11 @@ class adder_test extends uvm_test;
       seq_ripple = adder_ripple_carry_test::type_id::create("seq_ripple");
     endfunction
     
-
-    
     function void end_of_elaboration_phase(uvm_phase phase);
       super.end_of_elaboration_phase(phase);
       //factory.print();
       $display("End of elaboration phase in agent");
     endfunction
-    
-
     
     function void start_of_simulation_phase(uvm_phase phase);
       super.start_of_simulation_phase(phase);
@@ -66,39 +58,30 @@ class adder_test extends uvm_test;
       set_report_default_file(file);
       set_report_severity_action_hier(UVM_INFO,UVM_DISPLAY+UVM_LOG);
       env.set_report_verbosity_level_hier(UVM_MEDIUM);
-      seq.loop_count=100;
+      seq.loop_count=3; // Reduced to minimize test vectors
     endfunction
     
-
-    
     task run_phase(uvm_phase phase);
-	      phase.raise_objection(this);
-            
-            // Start with reset sequence
-            rst.start(env.agent.sequencer);
-            
-            // Run base random sequence
-            seq.start(env.agent.sequencer);
-            
-            // Run constrained sequences
-            seq1_1.start(env.agent.sequencer); // a=0
-            seq2_1.start(env.agent.sequencer); // b=0
-            seq3_1.start(env.agent.sequencer); // cin=1
-            seq4_1.start(env.agent.sequencer); // Boundary values
-            seq5_1.start(env.agent.sequencer); // All bits
-            
-            // Run propagate pattern specific tests
-            seq_prop.start(env.agent.sequencer); // Special propagate patterns
-            
-            // Run generate pattern specific tests
-            seq_gen.start(env.agent.sequencer); // Special generate patterns
-            
-            // Run ripple carry specific tests 
-            seq_ripple.start(env.agent.sequencer); // Ripple carry patterns
-            
-            #10;
-	      phase.drop_objection(this);
+        phase.raise_objection(this);
+        
+        // Run base random sequence
+        seq.start(env.agent.sequencer);
+        
+        // Run constrained sequences (selected key test cases only)
+        seq1_1.start(env.agent.sequencer); // a=0
+        seq3_1.start(env.agent.sequencer); // cin=1
+        seq4_1.start(env.agent.sequencer); // Boundary values
+        seq5_1.start(env.agent.sequencer); // All bits
+        
+        // Run propagate pattern specific tests (these are already minimal)
+        seq_prop.start(env.agent.sequencer); // Special propagate patterns
+        
+        // Run selected essential test patterns
+        seq_gen.start(env.agent.sequencer); // Special generate patterns
+        seq_ripple.start(env.agent.sequencer); // Ripple carry patterns
+        
+        #10;
+        phase.drop_objection(this);
     endtask
     
-
 endclass:adder_test

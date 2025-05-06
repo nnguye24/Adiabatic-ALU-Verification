@@ -1,3 +1,5 @@
+`include "bennetClock.sv"
+
 module adder_tb();
     supply1 vdd;
     supply0 vss;
