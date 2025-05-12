@@ -1,32 +1,31 @@
-
 class adder_coverage extends uvm_subscriber #(adder_transaction);
   `uvm_component_utils(adder_coverage)
 
-  function new(string name="",uvm_component parent);
-    super.new(name,parent);
-    dut_cov = new();
-  endfunction
-  
-  
+  // Declare the covergroup instance first
   adder_transaction txn;
   real cov;
-
   covergroup dut_cov;
     option.per_instance=1;
     
     // Input value coverpoints
     A: coverpoint txn.a { 
-      bins low[]={[0:3]};
-      bins mid_low[]={[4:7]};
-      bins mid_high[]={[8:11]};
-      bins high[]={[12:15]};
+      bins zero = {16'h0000};
+      bins all_ones = {16'hFFFF};
+      bins upper_byte_ones = {16'hFF00};
+      bins lower_byte_ones = {16'h00FF};
+      bins pattern_A = {16'hAAAA};
+      bins pattern_5 = {16'h5555};
+      bins other = default;  // Catch all other values
     }
     
     B: coverpoint txn.b { 
-      bins low[]={[0:3]};
-      bins mid_low[]={[4:7]};
-      bins mid_high[]={[8:11]};
-      bins high[]={[12:15]};
+      bins zero = {16'h0000};
+      bins all_ones = {16'hFFFF};
+      bins upper_byte_ones = {16'hFF00};
+      bins lower_byte_ones = {16'h00FF};
+      bins pattern_A = {16'hAAAA};
+      bins pattern_5 = {16'h5555};
+      bins other = default;  // Catch all other values
     }
     
     // Propagate signal coverpoints 
@@ -61,12 +60,6 @@ class adder_coverage extends uvm_subscriber #(adder_transaction);
       bins alternating = binsof(PROPAGATE.random_cases) && binsof(GENERATEz.random_cases);
     }
     
-    // Cross coverage to see relationships
-    AxB: cross A, B {
-      bins corner_cases = binsof(A.low) && binsof(B.low) ||
-                         binsof(A.high) && binsof(B.high);
-    }
-    
     // Propagate pattern coverage
     PROP_PATTERN: coverpoint txn.propagate[3:0] {
       bins patterns[] = {[0:15]};  // Cover all 4-bit propagate patterns
@@ -99,25 +92,30 @@ class adder_coverage extends uvm_subscriber #(adder_transaction);
     RIPPLE_CROSS: cross RIPPLE_PATTERNS, CIN;
   endgroup: dut_cov
 
+  function new(string name="",uvm_component parent);
+    super.new(name,parent);
+    
+    dut_cov=new();
+    `uvm_info(get_type_name(), "Coverage model created", UVM_LOW)
+    dut_cov.set_inst_name($sformatf("%s.dut_cov", get_full_name()));
+    dut_cov.stop();   // First stop it (in case it's in an error state)
+    dut_cov.start();  // Then restart it to ensure it's enabled
+  endfunction
+
   function void write(adder_transaction t);
+    
     txn = t;
+    `uvm_info(get_type_name(), $sformatf("Received transaction: a=%h, b=%h", txn.a, txn.b), UVM_LOW)
     dut_cov.sample();
   endfunction
-  
-
   
   function void extract_phase(uvm_phase phase);
     super.extract_phase(phase);
     cov = dut_cov.get_coverage();
   endfunction
   
-
-
-  
   function void report_phase(uvm_phase phase);
     super.report_phase(phase);
     `uvm_info(get_type_name(),$sformatf("Coverage is %f",cov),UVM_MEDIUM)
   endfunction
-  
-  
-endclass:adder_coverage
+endclass

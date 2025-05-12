@@ -21,5 +21,4 @@ interface intf(input logic clk, reset);
         output a, b, cin,
         input clk, reset
     );
-    
 endinterface : intf

@@ -38,5 +38,4 @@ class adder_driver extends uvm_driver #(adder_transaction);
             seq_item_port.item_done();    
         end
     endtask
-
-endclass: adder_driver
+endclass

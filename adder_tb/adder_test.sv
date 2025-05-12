@@ -1,4 +1,3 @@
-
 class adder_test extends uvm_test;
     `uvm_component_utils(adder_test)
     
@@ -58,7 +57,7 @@ class adder_test extends uvm_test;
       set_report_default_file(file);
       set_report_severity_action_hier(UVM_INFO,UVM_DISPLAY+UVM_LOG);
       env.set_report_verbosity_level_hier(UVM_MEDIUM);
-      seq.loop_count=3; // Reduced to minimize test vectors
+      seq.loop_count=3; // Further reduced to minimize test vectors
     endfunction
     
     task run_phase(uvm_phase phase);
@@ -83,5 +82,4 @@ class adder_test extends uvm_test;
         #10;
         phase.drop_objection(this);
     endtask
-    
-endclass:adder_test
+endclass

@@ -1,14 +1,14 @@
 class adder_monitor extends uvm_monitor;
     `uvm_component_utils(adder_monitor)
 
+    adder_transaction txn;
+    virtual intf vif;
+    uvm_analysis_port#(adder_transaction) ap_mon;   // analysis port monitor
+
     function new(string name="",uvm_component parent);  
         super.new(name,parent);
         ap_mon = new("ap_mon", this);
     endfunction
-
-    adder_transaction txn;
-    virtual intf vif;
-    uvm_analysis_port#(adder_transaction) ap_mon;   // analysis port monitor
 
     function void build_phase(uvm_phase phase);
         super.build_phase(phase);
@@ -43,5 +43,4 @@ class adder_monitor extends uvm_monitor;
             ap_mon.write(txn);
         end
     endtask
-
-endclass: adder_monitor
+endclass

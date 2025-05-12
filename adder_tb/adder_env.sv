@@ -16,15 +16,12 @@ class adder_env extends uvm_env;
         agent = adder_agent::type_id::create("agent", this);
         scoreboard = adder_scoreboard::type_id::create("scoreboard", this);
         coverage = adder_coverage::type_id::create("coverage", this);
-
     endfunction
 
     function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
         agent.monitor.ap_mon.connect(coverage.analysis_export);
-
         agent.monitor.ap_mon.connect(scoreboard.ap_monitor);
         agent.driver.drv2sb.connect(scoreboard.ap_driver);
     endfunction
-
-endclass: adder_env
+endclass

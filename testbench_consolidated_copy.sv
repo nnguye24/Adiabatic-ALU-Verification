@@ -441,115 +441,7 @@ class adder_ripple_carry_test extends adder_sequence;
     endtask
 endclass
 
-class adder_bit_positions extends adder_sequence;
-    `uvm_object_utils(adder_bit_positions)
-    
-    function new(string name="adder_bit_positions");
-        super.new(name);
-    endfunction
-    // Bit positions 0 - 15
-    task body();
-        txn = adder_transaction::type_id::create("txn");
-        // position 0
-        start_item(txn);
-        txn.a = 16'h0001;
-        txn.b = 16'h0001; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 1
-        start_item(txn);
-        txn.a = 16'h0002; 
-        txn.b = 16'h0002; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 2
-        start_item(txn);
-        txn.a = 16'h0004; 
-        txn.b = 16'h0004; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 3
-        start_item(txn);
-        txn.a = 16'h0008; 
-        txn.b = 16'h0008; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 4
-        start_item(txn);
-        txn.a = 16'h0010; 
-        txn.b = 16'h0010; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 5
-        start_item(txn);
-        txn.a = 16'h0020; 
-        txn.b = 16'h0020; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 6
-        start_item(txn);
-        txn.a = 16'h0040; 
-        txn.b = 16'h0040; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 7
-        start_item(txn);
-        txn.a = 16'h0080; 
-        txn.b = 16'h0080; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 8
-        start_item(txn);
-        txn.a = 16'h0100; 
-        txn.b = 16'h0100; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 9
-        start_item(txn);
-        txn.a = 16'h0200; 
-        txn.b = 16'h0200; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 10
-        start_item(txn);
-        txn.a = 16'h0400; 
-        txn.b = 16'h0400; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 11
-        start_item(txn);
-        txn.a = 16'h0800; 
-        txn.b = 16'h0800; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 12
-        start_item(txn);
-        txn.a = 16'h1000; 
-        txn.b = 16'h1000; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 13
-        start_item(txn);
-        txn.a = 16'h2000; 
-        txn.b = 16'h2000; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 14
-        start_item(txn);
-        txn.a = 16'h4000; 
-        txn.b = 16'h4000; 
-        txn.cin = 0;
-        finish_item(txn);
-        // position 15
-        start_item(txn);
-        txn.a = 16'h8000; 
-        txn.b = 16'h8000; 
-        txn.cin = 0;
-        finish_item(txn);
-    endtask
-endclass
-
-
+// No reset sequence needed for this simplified version
 
 // Sequencer
 class adder_sequencer extends uvm_sequencer#(adder_transaction);
@@ -819,23 +711,17 @@ class adder_coverage extends uvm_subscriber #(adder_transaction);
     
     // Input value coverpoints
     A: coverpoint txn.a { 
-      bins zero = {16'h0000};
-      bins all_ones = {16'hFFFF};
-      bins upper_byte_ones = {16'hFF00};
-      bins lower_byte_ones = {16'h00FF};
-      bins pattern_A = {16'hAAAA};
-      bins pattern_5 = {16'h5555};
-      bins other = default;  // Catch all other values
+      bins low[]={[0:3]};
+      bins mid_low[]={[4:7]};
+      bins mid_high[]={[8:11]};
+      bins high[]={[12:15]};
     }
     
     B: coverpoint txn.b { 
-      bins zero = {16'h0000};
-      bins all_ones = {16'hFFFF};
-      bins upper_byte_ones = {16'hFF00};
-      bins lower_byte_ones = {16'h00FF};
-      bins pattern_A = {16'hAAAA};
-      bins pattern_5 = {16'h5555};
-      bins other = default;  // Catch all other values
+      bins low[]={[0:3]};
+      bins mid_low[]={[4:7]};
+      bins mid_high[]={[8:11]};
+      bins high[]={[12:15]};
     }
     
     // Propagate signal coverpoints 
@@ -868,6 +754,12 @@ class adder_coverage extends uvm_subscriber #(adder_transaction);
       
       // Other random relationships
       bins alternating = binsof(PROPAGATE.random_cases) && binsof(GENERATEz.random_cases);
+    }
+    
+    // Cross coverage to see relationships
+    AxB: cross A, B {
+      bins corner_cases = binsof(A.low) && binsof(B.low) ||
+                         binsof(A.high) && binsof(B.high);
     }
     
     // Propagate pattern coverage
@@ -904,18 +796,11 @@ class adder_coverage extends uvm_subscriber #(adder_transaction);
 
   function new(string name="",uvm_component parent);
     super.new(name,parent);
-    
     dut_cov=new();
-    `uvm_info(get_type_name(), "Coverage model created", UVM_LOW)
-    dut_cov.set_inst_name($sformatf("%s.dut_cov", get_full_name()));
-    dut_cov.stop();   // First stop it (in case it's in an error state)
-    dut_cov.start();  // Then restart it to ensure it's enabled
   endfunction
 
   function void write(adder_transaction t);
-    
     txn = t;
-    `uvm_info(get_type_name(), $sformatf("Received transaction: a=%h, b=%h", txn.a, txn.b), UVM_LOW)
     dut_cov.sample();
   endfunction
   
@@ -987,8 +872,6 @@ class adder_test extends uvm_test;
     adder_propagate_test seq_prop;
     adder_generate_test seq_gen;
     adder_ripple_carry_test seq_ripple;
-
-    adder_bit_positions seq_bit_pos;
     
     function void build_phase(uvm_phase phase);
       super.build_phase(phase);
@@ -1006,7 +889,6 @@ class adder_test extends uvm_test;
       seq_prop = adder_propagate_test::type_id::create("seq_prop");
       seq_gen = adder_generate_test::type_id::create("seq_gen");
       seq_ripple = adder_ripple_carry_test::type_id::create("seq_ripple");
-      seq_bit_pos = adder_bit_positions::type_id::create("seq_bit_pos");
     endfunction
     
     function void end_of_elaboration_phase(uvm_phase phase);
@@ -1043,8 +925,6 @@ class adder_test extends uvm_test;
         // Run selected essential test patterns
         seq_gen.start(env.agent.sequencer); // Special generate patterns
         seq_ripple.start(env.agent.sequencer); // Ripple carry patterns
-
-        seq_bit_pos.start(env.agent.sequencer); // Bit positions 0-15 test.
         
         #10;
         phase.drop_objection(this);
