@@ -915,7 +915,7 @@ class adder_coverage extends uvm_subscriber #(adder_transaction);
   function void write(adder_transaction t);
     
     txn = t;
-    `uvm_info(get_type_name(), $sformatf("Received transaction: a=%h, b=%h", txn.a, txn.b), UVM_LOW)
+    //`uvm_info(get_type_name(), $sformatf("Received transaction: a=%h, b=%h", txn.a, txn.b), UVM_LOW)
     dut_cov.sample();
   endfunction
   
