@@ -1,0 +1,21 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-RUNMODE
+-uvmnocdnsextra
+-I_INCDIR
+/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools.lnx86/methodology/UVM/CDNS-IEEE/sv/src
+-DEFINE
+USE_PARAMETERIZED_WRAPPER
+-UPDATE
+-CDSLIB
+./xcelium.d/run.lnx8664.24.03.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.24.03.d/hdlrun.var
+-work
+worklib
+-UVMNOSINGLESTEP
+-define
+UVM_PLI
+/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools.lnx86/methodology/UVM/CDNS-IEEE/sv//src/uvm_pkg.sv
