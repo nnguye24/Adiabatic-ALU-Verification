@@ -1,0 +1,2 @@
+SOFTINCLUDE /afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cds.lib
+define worklib ../worklib
