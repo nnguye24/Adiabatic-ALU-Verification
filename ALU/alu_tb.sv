@@ -27,15 +27,15 @@ module alu_tb();
     reg reset;
     reg clk;
     wire instFlag;
-    wire [16:0] clkneg;  
-    wire [16:0] clkpos;  
+    wire [12:0] clkneg;  
+    wire [12:0] clkpos;  
     
     wire [16:0] clkpos_mapped = {vdd, vdd, clkpos[12], vdd, vdd, clkpos[11:1], clkpos[12]};
     wire [16:0] clkneg_mapped = {vss, vss, clkneg[12], vss, vss, clkneg[11:1], clkneg[12]};
 
 
     bennett_clock #(
-        .WIDTH(17)  
+        .WIDTH(13)  
     ) bennett_gen (
         .clk(clk),
         .reset(reset),
@@ -86,10 +86,63 @@ module alu_tb();
         clk = 0;
         forever #5 clk = ~clk;  // 10 time units per clock cycle
     end
+    // Slow clock generation
+    always(@posedge clk) begin    
+        if ((clkpos == 13'b1111111111111) && (clkneg == 13'b0000000000000)) begin
+            ALU_O_Fclkpos <= 1;  
+            A_Fclkpos <= 1;
+        end else begin
+            ALU_O_Fclkpos <= 0;  
+            A_Fclkpos <= 0;
+        end
+    end
 
     initial begin
+        // Initialize inputs 
+        ALU_Control0 = 0;
+        ALU_Control1 = 0;
+        ALU_O_Fclkpos = 0;  
+        A_Fclkpos = 0;
+        A_mux = 0;  
+        Adder_Cin = 0;  
+        B_mux0 = 0; 
+        B_mux1 = 0;
+        PC_in = 16'b0000000000000000;  
+        SUB = 0;
+        STL = 0;
+        a = 16'b0000000000000000;   /
+        b = 16'b0000000000000000;    
+        instr_in = 16'b0000000000000000;    
+        mux3_0 = 0;
+        mux3_1 = 0; 
+        @(posedge instFlag) // wait for the first instFlag edge 
+        // 1+1(I think)
+        // A mux has to choose d which corresponds to SRAM_in, B mux has to choose b which corresponds to b_regout(flip flop output)
+        // C0 = 0, C1 = 1 ==> adder out
+        ALU_Control0 = 0;
+        ALU_Control1 = 1;
+
+        ALU_O_Fclkpos = 0;  // slow clocks start at 0
+        A_Fclkpos = 0;
         
-        @(posedge instFlag);
+        A_mux = 1;  // chooses the b output of the flip flop
+        Adder_Cin = 0;  // carry in
+        B_mux0 = 1; // choose the d, output of the flip flop
+        B_mux1 = 1;
+        PC_in = 16'b0000000000000000;   // idk man
+        // subtract right and left
+        SUB = 0;
+        STL = 0;
+        // ALU stuff
+        a = 16'b0000000000000001;   // 1    
+        b = 16'b0000000000000010;   // 2    
+        instr_in = 16'b0000000000000001;    // i have no idea what this does does. Seems to be an input of a mux, doesnt go anywhere else. 
+        // the type of operation is determined by ALU_Control0 and ALU_Control1 instead. Maybe this is for a jump instruction?
+        
+        mux3_0 = 0;
+        mux3_1 = 0; 
+        @(posedge instFlag); 
+
         
         $finish;
     end
