@@ -8,9 +8,11 @@
 -UVMNOSINGLESTEP
 -define
 UVM_PLI
+-INCDIR
+adder
 -uvmnocdnsextra
 /afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools.lnx86/methodology/UVM/CDNS-IEEE/sv//src/uvm_macros.svh
-adder_consolidated.sv
+adder/adder.sv
 testbench_consolidated.sv
 -CDSLIB
 ./xcelium.d/run.lnx8664.24.03.d/cdsrun.lib

@@ -12,9 +12,11 @@
 -coverage
 all
 -covoverwrite
+-incdir
+adder
 -uvmnocdnsextra
 -uvmhome
 /afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools.lnx86/methodology/UVM/CDNS-IEEE/sv/
 /afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools.lnx86/methodology/UVM/CDNS-IEEE/sv//src/uvm_macros.svh
-adder_consolidated.sv
+adder/adder.sv
 testbench_consolidated.sv

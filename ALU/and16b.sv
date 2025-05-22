@@ -2,6 +2,7 @@
 // LAST TIME SAVED: Apr 26 10:22:23 2025
 // NETLIST TIME: May 19 18:35:43 2025
 `timescale 1ns / 1ns 
+`include "and2b.sv"
 
 module and16b ( a, b, clkneg, clkneg2, clkpos, clkpos2, out, vdd, vss
      );

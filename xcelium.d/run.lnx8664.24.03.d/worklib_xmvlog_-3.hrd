@@ -2,6 +2,8 @@
 // File created by:  xrun
 // Do not modify this file
 //
+-INCDIR
+adder
 -uvmnocdnsextra
 -I_INCDIR
 /afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools.lnx86/methodology/UVM/CDNS-IEEE/sv/src

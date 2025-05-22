@@ -22,17 +22,19 @@ module adder ( a[0], a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8],
      out[6], out[7], out[8], out[9], out[10], out[11], out[12],
      out[13], out[14], out[15], vdd, vss );
 
-input cin, vdd, vss;
+input  cin, vdd, vss;
 output cout;
-input [0:7]  clkpos;
+  
 input [0:7]  clkneg;
-output [0:15]  out;
-input [0:15]  a;
+input [0:7]  clkpos;
 input [0:15]  b;
+input [0:15]  a;
+output [0:15]  out;
 
 // Buses in the design
 
 wire  [0:15]  p1;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";
@@ -88,18 +90,21 @@ black_cell2b I48 ( net779, net528, net0470, p1[14], p1[13], net0316,
      clkneg[2], clkpos[2], vdd, vss);
 black_cell2b I47 ( net780, net664, net779, p1[15], p1[14], net663,
      clkneg[2], clkpos[2], vdd, vss);
+inv I126 ( clkneg[0], clkpos[0], cin, cin_inv, vdd, vss);
+inv I125 ( clkneg[4], clkpos[4], net434, net0287, vdd, vss);
+inv I124 ( clkneg[4], clkpos[4], net0318, net338, vdd, vss);
 inv I104 ( clkneg[5], clkpos[5], net0341, net172, vdd, vss);
 inv I103 ( clkneg[5], clkpos[5], net0866, net266, vdd, vss);
 inv I102 ( clkneg[5], clkpos[5], net0197, net186, vdd, vss);
 inv I101 ( clkneg[5], clkpos[5], net0878, net193, vdd, vss);
-inv I78 ( clkneg[3], clkpos[3], net0385, net151, vdd, vss);
-gray_cell_inv2b I100 ( net280, net279, cin, net0301, clkneg[5],
+inv I78 ( clkneg[3], clkpos[3], net0385, net0324, vdd, vss);
+gray_cell_inv2b I100 ( net280, net279, cin_inv, net0301, clkneg[5],
      clkpos[5], vdd, vss);
-gray_cell_inv2b I99 ( net0652, net0361, net151, net283, clkneg[5],
+gray_cell_inv2b I99 ( net0652, net0361, net0385, net283, clkneg[5],
      clkpos[5], vdd, vss);
 gray_cell_inv2b I98 ( net214, net291, net338, net289, clkneg[5],
      clkpos[5], vdd, vss);
-gray_cell_inv2b I97 ( net298, net378, net434, net377, clkneg[5],
+gray_cell_inv2b I97 ( net298, net378, net0287, net377, clkneg[5],
      clkpos[5], vdd, vss);
 gray_cell_inv2b I96 ( net228, net386, net0341, net301, clkneg[5],
      clkpos[5], vdd, vss);
@@ -109,7 +114,7 @@ gray_cell_inv2b I94 ( net316, net0326, net0197, net313, clkneg[5],
      clkpos[5], vdd, vss);
 gray_cell_inv2b I93 ( net136, net0617, net0878, net319, clkneg[5],
      clkpos[5], vdd, vss);
-gray_cell_inv2b I77 ( net338, net439, cin, net551, clkneg[3],
+gray_cell_inv2b I77 ( net0318, net439, cin_inv, net551, clkneg[3],
      clkpos[3], vdd, vss);
 gray_cell_inv2b I76 ( net434, net0736, net0385, net559, clkneg[3],
      clkpos[3], vdd, vss);
@@ -176,9 +181,9 @@ and2b I15 ( a[15], b[15], clkneg[0], clkneg[1], clkpos[0], clkpos[1],
      net780, vdd, vss);
 xor2b I121 ( p1[0], cin, out[0], clkneg[6], clkneg[7], clkpos[6],
      clkpos[7], vdd, vss);
-xor2b I120 ( p1[1], net151, out[1], clkneg[6], clkneg[7], clkpos[6],
+xor2b I120 ( p1[1], net0324, out[1], clkneg[6], clkneg[7], clkpos[6],
      clkpos[7], vdd, vss);
-xor2b I119 ( p1[2], net338, out[2], clkneg[6], clkneg[7], clkpos[6],
+xor2b I119 ( p1[2], net0318, out[2], clkneg[6], clkneg[7], clkpos[6],
      clkpos[7], vdd, vss);
 xor2b I118 ( p1[3], net434, out[3], clkneg[6], clkneg[7], clkpos[6],
      clkpos[7], vdd, vss);
@@ -242,9 +247,9 @@ gray_cell2b I122 ( net0848, net0300, net136, net0298, clkneg[6],
      clkpos[6], vdd, vss);
 gray_cell2b I91 ( net0341, net327, cin, net0743, clkneg[4], clkpos[4],
      vdd, vss);
-gray_cell2b I90 ( net0866, net333, net151, net0359, clkneg[4],
+gray_cell2b I90 ( net0866, net333, net0324, net0359, clkneg[4],
      clkpos[4], vdd, vss);
-gray_cell2b I89 ( net0197, net458, net338, net0731, clkneg[4],
+gray_cell2b I89 ( net0197, net458, net0318, net0731, clkneg[4],
      clkpos[4], vdd, vss);
 gray_cell2b I88 ( net0878, net345, net434, net0345, clkneg[4],
      clkpos[4], vdd, vss);

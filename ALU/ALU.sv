@@ -3,6 +3,19 @@
 // NETLIST TIME: May 19 18:35:44 2025
 `timescale 1ns / 1ns 
 
+`include "mux3to1_16b.sv"
+`include "cond_inv16b.sv"
+`include "and16b.sv"
+`include "zero_detector.sv"
+`include "or16b.sv"
+`include "adder.sv"
+`include "inv_fo16_irr.sv"
+`include "Register16b.sv"
+`include "mux4to1_16b.sv"
+`include "mux2to1_16b.sv"
+
+module ALU ( ALU_Control0, A
+
 module ALU ( ALU_Control0, ALU_Control1, ALU_OUT_Fclkneg,
      ALU_O_Fclkpos, A_Fclkneg_out, A_Fclkpos, A_mux, Adder_Cin, B_mux0,
      B_mux1, PC_in, SRAM_in, STL, SUB, a, alu_out, b, clkneg, clkpos,
