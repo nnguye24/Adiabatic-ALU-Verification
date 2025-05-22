@@ -2,7 +2,10 @@
 // LAST TIME SAVED: May 15 19:21:34 2025
 // NETLIST TIME: May 19 18:35:43 2025
 `timescale 1ns / 1ns 
-
+`include "nor2b.sv"
+`include "inv_fo4.sv"
+`include "xor16b.sv"
+`include "nand2b.sv"
 module zero_detector ( A[15:0], B[15:0], clkneg[0], clkneg[1],
      clkneg[2], clkneg[3], clkneg[4], clkneg[5], clkneg[6], clkpos[0],
      clkpos[1], clkpos[2], clkpos[3], clkpos[4], clkpos[5], clkpos[6],

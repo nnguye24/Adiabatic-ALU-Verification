@@ -2,7 +2,7 @@
 // LAST TIME SAVED: May 15 22:08:18 2025
 // NETLIST TIME: May 19 18:35:44 2025
 `timescale 1ns / 1ns 
-
+`include "mux4to1.sv"
 module mux4to1_16b ( a, b, c, clkneg, clkneg1, clkpos, clkpos1, d, in0,
      in1, out, vdd, vss );
 

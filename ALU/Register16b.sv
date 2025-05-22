@@ -2,7 +2,7 @@
 // LAST TIME SAVED: Apr 24 21:41:02 2025
 // NETLIST TIME: May 19 18:35:44 2025
 `timescale 1ns / 1ns 
-
+`include "flipflop2b.sv"
 module Register16b ( Fclkneg, Fclkpos, clkneg, clkpos, in, out, vdd,
      vss );
 

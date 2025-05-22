@@ -14,16 +14,19 @@
 `include "mux4to1_16b.sv"
 `include "mux2to1_16b.sv"
 
-module ALU ( ALU_Control0, A
 
 module ALU ( ALU_Control0, ALU_Control1, ALU_OUT_Fclkneg,
      ALU_O_Fclkpos, A_Fclkneg_out, A_Fclkpos, A_mux, Adder_Cin, B_mux0,
      B_mux1, PC_in, SRAM_in, STL, SUB, a, alu_out, b, clkneg, clkpos,
      instr_in, mux3_0, mux3_1, out, out_Zero_Detect, vdd, vss );
 
-input  ALU_Control0, ALU_Control1, ALU_OUT_Fclkneg, ALU_O_Fclkpos,
-     A_Fclkneg_out, A_Fclkpos, A_mux, Adder_Cin, B_mux0, B_mux1, STL,
-     SUB, mux3_0, mux3_1, out_Zero_Detect, vdd, vss;
+input  ALU_Control0, ALU_Control1,  ALU_O_Fclkpos,
+     A_Fclkpos, A_mux, Adder_Cin, B_mux0, B_mux1, STL,
+     SUB, mux3_0, mux3_1,  vdd, vss;
+
+output out_Zero_Detect;
+output A_Fclkneg_out;
+output ALU_OUT_Fclkneg;
 
 input [15:0]  b;
 output [15:0]  out;

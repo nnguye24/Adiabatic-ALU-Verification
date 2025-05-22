@@ -2,7 +2,7 @@
 // LAST TIME SAVED: Apr 23 13:56:58 2025
 // NETLIST TIME: May 19 18:35:43 2025
 `timescale 1ns / 1ns 
-
+`include "cond_inv2b.sv"
 module cond_inv16b ( a, b, clkneg, clkpos, out, vdd, vss );
 
 input  clkneg, clkpos, vdd, vss;

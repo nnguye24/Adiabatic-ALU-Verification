@@ -2,7 +2,7 @@
 // LAST TIME SAVED: Apr 26 10:32:31 2025
 // NETLIST TIME: May 19 18:35:43 2025
 `timescale 1ns / 1ns 
-
+`include "or2b.sv"
 module or16b ( a, b, clkneg, clkneg2, clkpos, clkpos2, out, vdd, vss );
 
 input  clkneg, clkneg2, clkpos, clkpos2, vdd, vss;
