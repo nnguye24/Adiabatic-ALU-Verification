@@ -27,15 +27,15 @@ module alu_tb();
     reg reset;
     reg clk;
     wire instFlag;
-    wire [16:0] clkneg;  
-    wire [16:0] clkpos;  
+    wire [12:0] clkneg;  
+    wire [12:0] clkpos;  
     
     wire [16:0] clkpos_mapped = {vdd, vdd, clkpos[12], vdd, vdd, clkpos[11:1], clkpos[12]};
     wire [16:0] clkneg_mapped = {vss, vss, clkneg[12], vss, vss, clkneg[11:1], clkneg[12]};
 
 
     bennett_clock #(
-        .WIDTH(17)  
+        .WIDTH(13)  
     ) bennett_gen (
         .clk(clk),
         .reset(reset),
