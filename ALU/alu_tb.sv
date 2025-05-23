@@ -77,8 +77,8 @@ module alu_tb();
     ALU dut ( ALU_Control0, ALU_Control1, ALU_OUT_Fclkneg,
        ALU_O_Fclkpos, A_Fclkneg_out, A_Fclkpos, A_mux, Adder_Cin, B_mux0,
        B_mux1, PC_in, SRAM_in, STL, SUB, a, alu_out, b, 
-       {clkneg[12], clkneg[1:11], vss, vss, clkneg[12], vss, vss},
-       {clkpos[12], clkpos[1:11], vdd, vdd, clkpos[12], vdd, vss},
+       {vss, vss, clkneg[12], vss, vss, clkneg[11:1], clkneg[12]},
+       {vdd, vdd, clkpos[12], vdd, vdd, clkpos[11:1], clkpos[12]},
        instr_in, mux3_0, mux3_1, out, out_Zero_Detect, vdd, vss );
     
     // Clock generation
