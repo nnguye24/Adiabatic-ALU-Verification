@@ -27,11 +27,11 @@ module alu_tb();
     reg reset;
     reg clk;
     wire instFlag;
-    wire [12:0] clkneg;  
-    wire [12:0] clkpos;  
+    wire [0:12] clkneg;  
+    wire [0:12] clkpos;  
     
-    wire [16:0] clkpos_mapped = {vdd, vdd, clkpos[12], vdd, vdd, clkpos[11:1], clkpos[12]};
-    wire [16:0] clkneg_mapped = {vss, vss, clkneg[12], vss, vss, clkneg[11:1], clkneg[12]};
+    //wire [16:0] clkpos_mapped = {vdd, vdd, clkpos[12], vdd, vdd, clkpos[11:1], clkpos[12]};
+    //wire [16:0] clkneg_mapped = {vss, vss, clkneg[12], vss, vss, clkneg[11:1], clkneg[12]};
 
 
     bennett_clock #(
@@ -77,8 +77,8 @@ module alu_tb();
     ALU dut ( ALU_Control0, ALU_Control1, ALU_OUT_Fclkneg,
        ALU_O_Fclkpos, A_Fclkneg_out, A_Fclkpos, A_mux, Adder_Cin, B_mux0,
        B_mux1, PC_in, SRAM_in, STL, SUB, a, alu_out, b, 
-       {vss, vss, clkneg[12], vss, vss, clkneg[11:1], clkneg[12]},
-       {vdd, vdd, clkpos[12], vdd, vdd, clkpos[11:1], clkpos[12]},
+       {clkneg[12], clkneg[11:11], vss, vss, clkneg[12], vss, vss},
+       {clkpos[12], clkpos[1:11], vdd, vdd, clkpos[12], vdd, vdd},
        instr_in, mux3_0, mux3_1, out, out_Zero_Detect, vdd, vss );
     
     // Clock generation
@@ -115,6 +115,9 @@ module alu_tb();
         instr_in = 16'b0000000000000000;    
         mux3_0 = 0;
         mux3_1 = 0; 
+        reset = 1;
+        #20 
+        reset = 0;
 
 
         @(posedge instFlag) // wait for the first instFlag edge 

@@ -1,0 +1,34 @@
+#e1(23May2025:16:15:41): source ./xcelium.d/env.d/env.history.23May2025_16_15_41
+s1(23May2025:16:15:41):  xrun -access +r -gui ALU.sv alu_tb.sv 
+#e2(23May2025:16:22:20): source ./xcelium.d/env.d/env.history.23May2025_16_22_20
+s2(23May2025:16:22:20):  xrun -access +r -gui ALU.sv alu_tb.sv 
+#e3(23May2025:16:23:11): source ./xcelium.d/env.d/env.history.23May2025_16_23_11
+s3(23May2025:16:23:11):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e4(23May2025:16:26:15): source ./xcelium.d/env.d/env.history.23May2025_16_26_15
+s4(23May2025:16:26:15):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e5(23May2025:16:26:41): source ./xcelium.d/env.d/env.history.23May2025_16_26_41
+s5(23May2025:16:26:41):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e6(23May2025:16:46:03): source ./xcelium.d/env.d/env.history.23May2025_16_46_03
+s6(23May2025:16:46:03):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e7(23May2025:16:47:42): source ./xcelium.d/env.d/env.history.23May2025_16_47_42
+s7(23May2025:16:47:42):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e8(23May2025:16:55:27): source ./xcelium.d/env.d/env.history.23May2025_16_55_27
+s8(23May2025:16:55:27):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e9(23May2025:17:21:07): source ./xcelium.d/env.d/env.history.23May2025_17_21_07
+s9(23May2025:17:21:07):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e10(23May2025:17:21:53): source ./xcelium.d/env.d/env.history.23May2025_17_21_53
+s10(23May2025:17:21:53):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e11(23May2025:17:40:48): source ./xcelium.d/env.d/env.history.23May2025_17_40_48
+s11(23May2025:17:40:48):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e12(23May2025:17:42:56): source ./xcelium.d/env.d/env.history.23May2025_17_42_56
+s12(23May2025:17:42:56):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e13(23May2025:17:54:23): source ./xcelium.d/env.d/env.history.23May2025_17_54_23
+s13(23May2025:17:54:23):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e14(23May2025:17:54:43): source ./xcelium.d/env.d/env.history.23May2025_17_54_43
+s14(23May2025:17:54:43):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e15(23May2025:18:05:03): source ./xcelium.d/env.d/env.history.23May2025_18_05_03
+s15(23May2025:18:05:03):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e16(23May2025:19:35:44): source ./xcelium.d/env.d/env.history.23May2025_19_35_44
+s16(23May2025:19:35:44):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 
+#e17(23May2025:19:36:42): source ./xcelium.d/env.d/env.history.23May2025_19_36_42
+s17(23May2025:19:36:42):  xrun -access +r -gui ALU.sv custom_tranif.sv alu_tb.sv 

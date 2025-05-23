@@ -1,0 +1,458 @@
+xrun(64): 24.03-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s006: Started on May 23, 2025 at 19:36:42 EDT
+xrun
+	-access +r
+	-gui
+	ALU.sv
+	custom_tranif.sv
+	alu_tb.sv
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+Recompiling... reason: file './alu_tb.sv' is newer than expected.
+	expected: Fri May 23 18:03:44 2025
+	actual:   Fri May 23 19:36:27 2025
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xmvlog: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+file: ALU.sv
+	module worklib.mux4to1:sv
+		errors: 0, warnings: 0
+	module worklib.and2b:sv
+		errors: 0, warnings: 0
+	module worklib.xor2b:sv
+		errors: 0, warnings: 0
+module and2b ( a, b, clkneg, clkneg2, clkpos, clkpos2, out, vdd, vss );
+           |
+xmvlog: *W,RECOME (./and2b.sv,6|11): recompiling design unit worklib.and2b:sv.
+	First compiled from line 6 of and2b.sv.
+	module worklib.and2b:sv
+		errors: 0, warnings: 1
+module xor2b ( A, B, Cout, clkneg1, clkneg2, clkpos1, clkpos2, vdd, vss
+           |
+xmvlog: *W,RECOME (./xor2b.sv,6|11): recompiling design unit worklib.xor2b:sv.
+	First compiled from line 6 of xor2b.sv.
+	module worklib.xor2b:sv
+		errors: 0, warnings: 1
+module mux4to1 ( a, b, c, clkneg, clkneg1, clkpos, clkpos1, d, in0,
+             |
+xmvlog: *W,RECOME (./mux4to1.sv,6|13): recompiling design unit worklib.mux4to1:sv.
+	First compiled from line 6 of mux4to1.sv.
+	module worklib.mux4to1:sv
+		errors: 0, warnings: 1
+file: alu_tb.sv
+	module worklib.alu_tb:sv
+		errors: 0, warnings: 0
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 15
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xrun: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+DEFINE std       ./STD
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,1): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/STD' (cds.lib command ignored).
+DEFINE synopsys  ./SYNOPSYS
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,2): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/SYNOPSYS' (cds.lib command ignored).
+DEFINE ieee      ./IEEE
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,3): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/IEEE' (cds.lib command ignored).
+DEFINE ambit     ./AMBIT
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,4): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/AMBIT' (cds.lib command ignored).
+DEFINE vital_memory ./VITAL_MEMORY
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,5): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/VITAL_MEMORY' (cds.lib command ignored).
+DEFINE ncutils ./NCUTILS
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,6): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCUTILS' (cds.lib command ignored).
+DEFINE ncinternal ./NCINTERNAL
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,7): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCINTERNAL' (cds.lib command ignored).
+DEFINE ncmodels ./NCMODELS
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,8): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/NCMODELS' (cds.lib command ignored).
+DEFINE xmutils ./XMUTILS
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,9): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMUTILS' (cds.lib command ignored).
+DEFINE xminternal ./XMINTERNAL
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,10): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMINTERNAL' (cds.lib command ignored).
+DEFINE xmmodels ./XMMODELS
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,11): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/XMMODELS' (cds.lib command ignored).
+DEFINE cds_assertions ./CDS_ASSERTIONS
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,12): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_ASSERTIONS' (cds.lib command ignored).
+DEFINE cds_inhconn ./CDS_INHCONN
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,13): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_INHCONN' (cds.lib command ignored).
+DEFINE cds_spicelib ./CDS_SPICELIB
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,14): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_SPICELIB' (cds.lib command ignored).
+DEFINE cds_amsfunctions ./CDS_AMSFUNCTIONS
+|
+xmelab: *W,DLCPTH (/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/cdsvhdl.lib,15): cds.lib Invalid path '/afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/inca/files/CDS_AMSFUNCTIONS' (cds.lib command ignored).
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		alu_tb
+       {clkneg[12], clkneg[1:11], vss, vss, clkneg[12], vss, vss},
+                         |
+xmelab: *E,RNGDIR (./alu_tb.sv,80|25): Reversed part-select index expression ordering.
+       {clkpos[12], clkpos[1:11], vdd, vdd, clkpos[12], vdd, vdd},
+                         |
+xmelab: *E,RNGDIR (./alu_tb.sv,81|25): Reversed part-select index expression ordering.
+xrun: *E,ELBERR: Error (*E) or soft error (*SE) occurred during elaboration (status 1), exiting.
+TOOL:	xrun(64)	24.03-s006: Exiting on May 23, 2025 at 19:36:43 EDT  (total: 00:00:01)

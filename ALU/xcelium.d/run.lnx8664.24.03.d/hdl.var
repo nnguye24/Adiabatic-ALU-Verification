@@ -1,0 +1,6 @@
+define XMSIMRC	( /afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/xcelium/files/xmsimrc, ~/.xmsimrc )
+define AMSRC	( /afs/crc.nd.edu/group/cse/cadence2/installs/XCELIUM2403/tools/xcelium/files/amsrc, ~/.amsrc )
+include ./hdlrun.var
+define SNAPSHOT worklib.alu_tb:sv
+DEFINE RUNMODEDEFAULT 1
+DEFINE LIB_MAP ( + => worklib )
