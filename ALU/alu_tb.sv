@@ -87,7 +87,7 @@ module alu_tb();
         forever #5 clk = ~clk;  // 10 time units per clock cycle
     end
     // Slow clock generation
-    always(@posedge clk) begin    
+    always @(posedge clk) begin    
         if ((clkpos == 13'b1111111111111) && (clkneg == 13'b0000000000000)) begin
             ALU_O_Fclkpos <= 1;  
             A_Fclkpos <= 1;
