@@ -1,4 +1,4 @@
-`include "bennetClock.sv"
+`include "bennettClock.sv"
 
 module alu_tb();
     supply1 vdd;
@@ -115,6 +115,8 @@ module alu_tb();
         instr_in = 16'b0000000000000000;    
         mux3_0 = 0;
         mux3_1 = 0; 
+
+
         @(posedge instFlag) // wait for the first instFlag edge 
         // 1+1(I think)
         // A mux has to choose d which corresponds to SRAM_in, B mux has to choose b which corresponds to b_regout(flip flop output)
@@ -138,9 +140,11 @@ module alu_tb();
         b = 16'b0000000000000010;   // 2    
         instr_in = 16'b0000000000000001;    // i have no idea what this does does. Seems to be an input of a mux, doesnt go anywhere else. 
         // the type of operation is determined by ALU_Control0 and ALU_Control1 instead. Maybe this is for a jump instruction?
-        
         mux3_0 = 0;
         mux3_1 = 0; 
+
+
+
         @(posedge instFlag); 
 
         

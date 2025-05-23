@@ -5,7 +5,7 @@
 
 module nand2b ( a, b, clkneg, clkpos, out, vdd, vss );
 
-input  a, b, clkneg, clkpos, out, vdd, vss;
+input  a, b, clkneg, clkpos, vdd, vss;
 output out;
 
 specify 
