@@ -4,6 +4,7 @@ module bennett_clock #(
     input wire clk,
     input wire reset,
     output reg instFlag,
+  	output reg Fclk,	// Slow clock 
     output reg [WIDTH-1:0] clkn,
     output reg [WIDTH-1:0] clkp
 );
@@ -14,10 +15,11 @@ module bennett_clock #(
     localparam ALL_X = 2'b11;
 
     reg [1:0] state;
-    reg [3:0] counter;
+  reg [3:0] counter;
     integer i;
 
     initial begin
+      	Fclk <= 0;
         instFlag <= 0;
         clkn = {WIDTH{1'bX}};
         clkp = {WIDTH{1'bX}};
@@ -56,13 +58,17 @@ module bennett_clock #(
                             end
                         end
                         counter <= counter + 1;
-                    end else begin
+                      
+                    end
+                  if (counter == WIDTH-1) begin
                         state <= RAMP_DOWN;
+                      	Fclk <= 1;
                         counter <= 1;
                     end
                 end
 
                 RAMP_DOWN: begin
+                  	Fclk <= 0;
                     if (counter < WIDTH) begin
                         for (i = 0; i < WIDTH; i = i + 1) begin
                             if (i < WIDTH - counter) begin
