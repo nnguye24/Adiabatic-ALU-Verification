@@ -1,12 +1,14 @@
 // Library - MIPS25, Cell - or2b, View - schematic
-// LAST TIME SAVED: Mar 29 18:05:52 2025
-// NETLIST TIME: May 19 18:35:43 2025
+// LAST TIME SAVED: Jun 16 21:18:02 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module or2b ( a, b, clkneg, clkneg2, clkpos, clkpos2, out, vdd, vss );
+module or2b ( out, a, b, clkneg, clkneg2, clkpos, clkpos2, vdd, vss );
+
+output  out;
 
 input  a, b, clkneg, clkneg2, clkpos, clkpos2, vdd, vss;
-output out;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";

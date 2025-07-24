@@ -1,13 +1,15 @@
 // Library - MIPS25, Cell - black_cell_inv2b, View - schematic
-// LAST TIME SAVED: Apr  2 12:58:26 2025
-// NETLIST TIME: May 19 18:35:44 2025
+// LAST TIME SAVED: Jun 16 20:11:41 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module black_cell_inv2b ( Cout, G, Gprev, P, Pout, Pprev, clkneg,
+module black_cell_inv2b ( Cout, Pout, G, Gprev, P, Pprev, clkneg,
      clkpos, vdd, vss );
 
-input  G, Gprev, P, Pout, Pprev, clkneg, clkpos, vdd, vss;
-output Cout;
+output  Cout, Pout;
+
+input  G, Gprev, P, Pprev, clkneg, clkpos, vdd, vss;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";

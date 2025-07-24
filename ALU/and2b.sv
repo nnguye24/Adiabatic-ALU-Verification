@@ -1,12 +1,14 @@
 // Library - MIPS25, Cell - and2b, View - schematic
-// LAST TIME SAVED: Apr 23 10:52:19 2025
-// NETLIST TIME: May 19 18:35:43 2025
+// LAST TIME SAVED: Jun 16 16:35:57 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module and2b ( a, b, clkneg, clkneg2, clkpos, clkpos2, out, vdd, vss );
+module and2b ( out, a, b, clkneg, clkneg2, clkpos, clkpos2, vdd, vss );
+
+output  out;
 
 input  a, b, clkneg, clkneg2, clkpos, clkpos2, vdd, vss;
-output out;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";

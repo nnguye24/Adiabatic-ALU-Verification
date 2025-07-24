@@ -1,12 +1,14 @@
 // Library - MIPS25, Cell - black_cell2b, View - schematic
-// LAST TIME SAVED: Apr 26 11:26:03 2025
-// NETLIST TIME: May 19 18:35:43 2025
+// LAST TIME SAVED: Jun 16 20:08:49 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module black_cell2b ( G, Gout, Gprev, P, Pin, Pout, clkneg, clkpos,
+module black_cell2b ( Gout, Pout, G, Gprev, P, Pin, clkneg, clkpos,
      vdd, vss );
 
-inout  G, Gout, Gprev, P, Pin, Pout, clkneg, clkpos, vdd, vss;
+output  Gout, Pout;
+
+input  G, Gprev, P, Pin, clkneg, clkpos, vdd, vss;
 
 
 specify 

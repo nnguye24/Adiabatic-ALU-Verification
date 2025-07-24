@@ -1,12 +1,14 @@
 // Library - MIPS25, Cell - inv_fo4, View - schematic
-// LAST TIME SAVED: Mar 27 12:31:35 2025
-// NETLIST TIME: May 19 18:35:43 2025
+// LAST TIME SAVED: Jun 16 20:25:19 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module inv_fo4 ( clkneg, clkpos, in, out, vdd, vss );
+module inv_fo4 ( out, clkneg, clkpos, in, vdd, vss );
+
+output  out;
 
 input  clkneg, clkpos, in, vdd, vss;
-output out;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";

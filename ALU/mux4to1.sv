@@ -1,15 +1,15 @@
 // Library - MIPS25, Cell - mux4to1, View - schematic
-// LAST TIME SAVED: May 15 09:29:01 2025
-// NETLIST TIME: May 19 18:35:43 2025
+// LAST TIME SAVED: Jun 16 20:56:11 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module mux4to1 ( a, b, c, clkneg, clkneg1, clkpos, clkpos1, d, in0,
-     in1, out, vdd, vss );
+module mux4to1 ( out, a, b, c, clkneg, clkneg1, clkpos, clkpos1, d,
+     in0, in1, vdd, vss );
 
-input  a, b, c, clkneg, clkneg1, clkpos, clkpos1, d, in0, in1,
-     vdd, vss;
+output  out;
 
-output out;
+input  a, b, c, clkneg, clkneg1, clkpos, clkpos1, d, in0, in1, vdd,
+     vss;
 
 
 specify 
