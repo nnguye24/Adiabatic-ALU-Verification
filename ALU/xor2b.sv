@@ -1,13 +1,15 @@
 // Library - MIPS25, Cell - xor2b, View - schematic
-// LAST TIME SAVED: Mar 31 14:55:13 2025
-// NETLIST TIME: May 19 18:35:43 2025
+// LAST TIME SAVED: Jun 16 21:24:43 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module xor2b ( A, B, Cout, clkneg1, clkneg2, clkpos1, clkpos2, vdd, vss
+module xor2b ( Cout, A, B, clkneg1, clkneg2, clkpos1, clkpos2, vdd, vss
      );
 
+output  Cout;
+
 input  A, B, clkneg1, clkneg2, clkpos1, clkpos2, vdd, vss;
-output Cout;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";

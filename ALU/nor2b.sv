@@ -1,12 +1,14 @@
 // Library - MIPS25, Cell - nor2b, View - schematic
-// LAST TIME SAVED: Mar 29 21:19:44 2025
-// NETLIST TIME: May 19 18:35:43 2025
+// LAST TIME SAVED: Jun 16 21:10:40 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
-module nor2b ( a, b, clkneg, clkpos, out, vdd, vss );
+module nor2b ( out, a, b, clkneg, clkpos, vdd, vss );
+
+output  out;
 
 input  a, b, clkneg, clkpos, vdd, vss;
-output out;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";

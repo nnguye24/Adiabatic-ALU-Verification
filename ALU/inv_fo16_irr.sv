@@ -1,12 +1,13 @@
 // Library - MIPS25, Cell - inv_fo16_irr, View - schematic
-// LAST TIME SAVED: Apr  4 17:00:00 2025
-// NETLIST TIME: May 19 18:35:44 2025
+// LAST TIME SAVED: Jun 16 20:43:25 2025
+// NETLIST TIME: Jul 10 17:04:17 2025
 `timescale 1ns / 1ns 
 
-module inv_fo16_irr ( in, out, vdd, vss );
+module inv_fo16_irr ( out, in, vdd, vss );
+
+output  out;
 
 input  in, vdd, vss;
-output out;
 
 
 specify 

@@ -1,12 +1,14 @@
 // Library - MIPS25, Cell - mux2to1, View - schematic
-// LAST TIME SAVED: Mar 31 15:15:18 2025
-// NETLIST TIME: May 19 18:35:44 2025
+// LAST TIME SAVED: Jun 16 20:48:24 2025
+// NETLIST TIME: Jul 10 17:04:17 2025
 `timescale 1ns / 1ns 
 
-module mux2to1 ( a, b, clkneg, clkpos, in, out, vdd, vss );
+module mux2to1 ( out, a, b, clkneg, clkpos, in, vdd, vss );
+
+output  out;
 
 input  a, b, clkneg, clkpos, in, vdd, vss;
-output out;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";

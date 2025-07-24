@@ -1,12 +1,14 @@
 // Library - MIPS25, Cell - gray_cell2b, View - schematic
-// LAST TIME SAVED: Apr 26 14:14:02 2025
-// NETLIST TIME: May 19 18:35:44 2025
+// LAST TIME SAVED: Jun 16 20:19:01 2025
+// NETLIST TIME: Jul 10 17:04:16 2025
 `timescale 1ns / 1ns 
 
 module gray_cell2b ( Cout, G, Gprev, P, clkneg, clkpos, vdd, vss );
 
+output  Cout;
+
 input  G, Gprev, P, clkneg, clkpos, vdd, vss;
-output Cout;
+
 
 specify 
     specparam CDS_LIBNAME  = "MIPS25";
