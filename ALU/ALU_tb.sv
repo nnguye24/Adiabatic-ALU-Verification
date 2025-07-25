@@ -1,5 +1,5 @@
 `include "bennettClock.sv"
-
+// Simple testbench for the ALU module no UVM
 module alu_tb();
     supply1 vdd;
     supply0 vss;
